@@ -163,6 +163,7 @@ public class AttackStateMachine : StateMachineBehaviour
                     Weapon_Cskill weapon_Cskill = weapon.GetComponent<Weapon_Cskill>();
                     if (weapon_Cskill != null)
                     {
+                        weapon_Cskill.OnActionEnd = null;
                         weapon_Cskill.OnActionEnd += thirdPerson.Weapon_FadeOut;
                         switch (weapon_Datas[i].fadeUnit)
                         {

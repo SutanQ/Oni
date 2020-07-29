@@ -9746,7 +9746,7 @@ ParticleSystemRenderer:
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
   m_VertexStreams: 000103042024
-  m_Mesh: {fileID: 7294522997249040225, guid: 8e19714e1c5386c43b45cf0e11ee77c1, type: 3}
+  m_Mesh: {fileID: 8415744226105679569, guid: a428d39352b7c9b4a9b7b184ebe8f3f5, type: 3}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
@@ -14623,7 +14623,7 @@ ParticleSystemRenderer:
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
   m_VertexStreams: 000103042024
-  m_Mesh: {fileID: 7294522997249040225, guid: 8e19714e1c5386c43b45cf0e11ee77c1, type: 3}
+  m_Mesh: {fileID: 8415744226105679569, guid: a428d39352b7c9b4a9b7b184ebe8f3f5, type: 3}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
@@ -19151,7 +19151,7 @@ ParticleSystem:
         m_RotationOrder: 4
     vectorLabel0_3: W
     mode1: 0
-    vectorComponentCount1: 4
+    vectorComponentCount1: 2
     color1:
       serializedVersion: 2
       minMaxState: 0
@@ -19218,30 +19218,30 @@ ParticleSystem:
     colorLabel1: Color
     vector1_0:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0
+      minMaxState: 1
+      scalar: 3
       minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
+          value: -0.5
+          inSlope: 1.5
+          outSlope: 1.5
+          tangentMode: 34
           weightedMode: 0
-          inWeight: 0.33333334
+          inWeight: 0
           outWeight: 0.33333334
         - serializedVersion: 3
           time: 1
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
+          value: 1
+          inSlope: 1.5
+          outSlope: 1.5
+          tangentMode: 34
           weightedMode: 0
           inWeight: 0.33333334
-          outWeight: 0.33333334
+          outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
@@ -19272,8 +19272,8 @@ ParticleSystem:
     vectorLabel1_0: X
     vector1_1:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0
+      minMaxState: 1
+      scalar: 4.5
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -19281,21 +19281,21 @@ ParticleSystem:
         - serializedVersion: 3
           time: 0
           value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 34
           weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
+          inWeight: 0
+          outWeight: 0
         - serializedVersion: 3
           time: 1
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
+          value: 1
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 34
           weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
+          inWeight: 0
+          outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
@@ -19492,8 +19492,8 @@ ParticleSystemRenderer:
   m_AllowRoll: 1
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
-  m_VertexStreams: 0001030420
-  m_Mesh: {fileID: 7294522997249040225, guid: 8e19714e1c5386c43b45cf0e11ee77c1, type: 3}
+  m_VertexStreams: 000103042024
+  m_Mesh: {fileID: 8415744226105679569, guid: a428d39352b7c9b4a9b7b184ebe8f3f5, type: 3}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
@@ -24021,7 +24021,7 @@ ParticleSystem:
         m_RotationOrder: 4
     vectorLabel0_3: W
     mode1: 0
-    vectorComponentCount1: 4
+    vectorComponentCount1: 2
     color1:
       serializedVersion: 2
       minMaxState: 0
@@ -24089,29 +24089,29 @@ ParticleSystem:
     vector1_0:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 3
       minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
+          value: -0.5
+          inSlope: 1.5
+          outSlope: 1.5
+          tangentMode: 34
           weightedMode: 0
-          inWeight: 0.33333334
+          inWeight: 0
           outWeight: 0.33333334
         - serializedVersion: 3
           time: 1
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
+          value: 1
+          inSlope: 1.5
+          outSlope: 1.5
+          tangentMode: 34
           weightedMode: 0
           inWeight: 0.33333334
-          outWeight: 0.33333334
+          outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
@@ -24143,7 +24143,7 @@ ParticleSystem:
     vector1_1:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 4.5
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -24151,21 +24151,21 @@ ParticleSystem:
         - serializedVersion: 3
           time: 0
           value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 34
           weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
+          inWeight: 0
+          outWeight: 0
         - serializedVersion: 3
           time: 1
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
+          value: 1
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 34
           weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
+          inWeight: 0
+          outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
@@ -24362,8 +24362,8 @@ ParticleSystemRenderer:
   m_AllowRoll: 1
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
-  m_VertexStreams: 0001030420
-  m_Mesh: {fileID: 7294522997249040225, guid: 8e19714e1c5386c43b45cf0e11ee77c1, type: 3}
+  m_VertexStreams: 000103042024
+  m_Mesh: {fileID: 8415744226105679569, guid: a428d39352b7c9b4a9b7b184ebe8f3f5, type: 3}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
@@ -24385,7 +24385,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8557700624403560918
 Transform:
   m_ObjectHideFlags: 0
@@ -29233,7 +29233,7 @@ ParticleSystemRenderer:
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
   m_VertexStreams: 0001030420
-  m_Mesh: {fileID: 7294522997249040225, guid: 8e19714e1c5386c43b45cf0e11ee77c1, type: 3}
+  m_Mesh: {fileID: 8415744226105679569, guid: a428d39352b7c9b4a9b7b184ebe8f3f5, type: 3}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
@@ -63447,7 +63447,7 @@ ParticleSystemRenderer:
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
   m_VertexStreams: 000103042024
-  m_Mesh: {fileID: 7294522997249040225, guid: 8e19714e1c5386c43b45cf0e11ee77c1, type: 3}
+  m_Mesh: {fileID: 8415744226105679569, guid: a428d39352b7c9b4a9b7b184ebe8f3f5, type: 3}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}

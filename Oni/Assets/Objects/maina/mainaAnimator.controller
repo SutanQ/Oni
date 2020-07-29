@@ -2962,7 +2962,7 @@ MonoBehaviour:
     FadeIn: 0.2
     FadeOut: 0.3
     catchFrame: 12
-  playAttackParticle: 1
+  playAttackParticle: 0
   playParticleFrame: 12
   specialWeaponAppear: 1
   specialAttackIndex: 3

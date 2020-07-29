@@ -52,12 +52,12 @@ public class Dagger_Cskill : Weapon_Cskill
             Destroy(g, destroyTime);
         else
             Destroy(g, g.GetComponent<ParticleSystem>().main.duration);
-
+        /*
         if (OnActionEnd != null)
         {
             OnActionEnd(fadeOut_t, fadeOut_attackIndex, fadeOut_secondIndex);
         }
-
+        */
         yield return null;
         /*
         if (fadeOut_t > t)
@@ -160,12 +160,12 @@ public class Dagger_Cskill : Weapon_Cskill
             Destroy(g, destroyTime3);
         else
             Destroy(g, g.GetComponent<ParticleSystem>().main.duration);
-
+        /*
         if (OnActionEnd != null)
         {
             OnActionEnd(fadeOut_t, fadeOut_attackIndex, fadeOut_secondIndex);
         }
-
+        */
         yield return null;
     }
 
@@ -177,12 +177,12 @@ public class Dagger_Cskill : Weapon_Cskill
             Destroy(g, destroyTimeJ1);
         else
             Destroy(g, g.GetComponent<ParticleSystem>().main.duration);
-
+        /*
         if (OnActionEnd != null)
         {
             OnActionEnd(fadeOut_t, fadeOut_attackIndex, fadeOut_secondIndex);
         }
-
+        */
         yield return null;
 
     }
