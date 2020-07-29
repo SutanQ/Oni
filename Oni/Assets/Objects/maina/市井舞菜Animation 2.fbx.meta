@@ -1,0 +1,172 @@
+fileFormatVersion: 2
+guid: 07e0071e150575c4fb79a43fa193870a
+ModelImporter:
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      74: -6596765583619615411
+    second: Coat|Walk
+  - first:
+      74: -134777326598471501
+    second: Hair|Walk
+  - first:
+      74: 3888107679142027666
+    second: rig|Attack1
+  - first:
+      74: -7352007257319621400
+    second: rig|Attack1.001
+  - first:
+      74: 2201242382962465064
+    second: rig|Attack2
+  - first:
+      74: -2160636895069638587
+    second: rig|AttackC1
+  - first:
+      74: -1357346344590563419
+    second: rig|AttackC2
+  - first:
+      74: -9186304114605020257
+    second: rig|AttackC3
+  - first:
+      74: 4388155724948295480
+    second: rig|damage
+  - first:
+      74: -2580571408341202236
+    second: rig|die
+  - first:
+      74: 4151185419005476434
+    second: rig|Dodge_Back
+  - first:
+      74: 7118238248284978273
+    second: rig|Dodge_Forward
+  - first:
+      74: -7361427651036151181
+    second: rig|Idle
+  - first:
+      74: -512320013847864616
+    second: rig|Jump
+  - first:
+      74: 2788624394545332526
+    second: rig|JumpAir
+  - first:
+      74: -4963163121458729945
+    second: rig|LeftHandGrip
+  - first:
+      74: 1577017239607051573
+    second: rig|LockIdle
+  - first:
+      74: -314394326654978310
+    second: rig|LockWalkBack
+  - first:
+      74: -3799609738781306374
+    second: rig|LockWalkForward
+  - first:
+      74: 1855949745766972702
+    second: rig|LockWalkLeft
+  - first:
+      74: 6561488243271019975
+    second: rig|LockWalkRight
+  - first:
+      74: -7247949741862191685
+    second: rig|RightHandGrip
+  - first:
+      74: -5480419611278045171
+    second: rig|Run
+  - first:
+      74: 6220216101745357903
+    second: rig|SpeedRun
+  - first:
+      74: 1023992570608409904
+    second: rig|Walk
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: rig/root
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 100
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

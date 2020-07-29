@@ -1,0 +1,161 @@
+fileFormatVersion: 2
+guid: ae929ed53191ca34e830e6b1866c5da6
+ModelImporter:
+  serializedVersion: 26
+  internalIDToNameTable:
+  - first:
+      74: 4860596802269083388
+    second: girl|girlDamege
+  - first:
+      74: -4508439412655256905
+    second: girl|girlDie
+  - first:
+      74: 5420323893379613656
+    second: girl|girlFootMonAnimationAction
+  - first:
+      74: -8312030823239134967
+    second: girl|girlIdle
+  - first:
+      74: 5855021495752119432
+    second: girl|girlJump
+  - first:
+      74: -5893119303785332915
+    second: girl|girlKick1
+  - first:
+      74: 1233224811220058971
+    second: girl|girlKiss
+  - first:
+      74: 441613697585640872
+    second: girl|girlRun
+  - first:
+      74: -2022133888655895607
+    second: girl|girlWalk
+  - first:
+      74: -5103110752670997424
+    second: boy|boyDamege
+  - first:
+      74: 6281048930168228058
+    second: boy|boyDie
+  - first:
+      74: -7736212918762963791
+    second: boy|boyIdle
+  - first:
+      74: -6143757772471648566
+    second: boy|boyJump
+  - first:
+      74: -8779082981877128325
+    second: boy|boyKick
+  - first:
+      74: 4428150044016267596
+    second: boy|boyKiss
+  - first:
+      74: 282989495387996689
+    second: boy|boyRun
+  - first:
+      74: -5699298795890092050
+    second: boy|boyWalk
+  - first:
+      74: 4359305527258079999
+    second: boy|girlFootMonAnimationAction
+  - first:
+      74: -8152538823673107302
+    second: animControl|ActionKick
+  - first:
+      74: -8302422235519757341
+    second: animControl|ActionRun
+  - first:
+      74: -5780710059243750699
+    second: animControl|ActionWalk
+  - first:
+      74: -7947481180756640855
+    second: animControl|girlFootMonAnimationAction
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

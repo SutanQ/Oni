@@ -1,0 +1,101 @@
+digraph G {
+node0 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float (750)
+Rate_a"]
+node1 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float3 ((0.0, 1.0, 0.0))
+bounds_center
+bounds_center"]
+node2 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float3 ((2.0, 3.0, 2.0))
+bounds_size
+bounds_size"]
+node3 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float2 ((1.0, 1.0))
+Count_a"]
+node4 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float2 ((0.0, 0.0))
+Delay_a"]
+node5 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float (100)
+Rate_b"]
+node6 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float (1)
+A_a
+attractionSpeed_a"]
+node7 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float (3)
+B_a"]
+node8 [shape="box" color="orange" style="filled" label="VFXExpressionPow Float
+rNorm_b"]
+node9 [shape="box" color="lightslategray" style="filled" label="VFXValue`1 Float (0.5)"]
+node10 [shape="box" color="orange" style="filled" label="VFXExpressionSin Float
+sinTheta_b"]
+node11 [shape="box" color="yellow" style="filled" label="VFXExpressionMul Float"]
+node12 [shape="box" color="lightslategray" style="filled" label="VFXValue`1 Float (6.283185)"]
+node13 [shape="box" color="yellow" style="filled" label="VFXExpressionRandom Float"]
+node14 [shape="box" color="orange" style="filled" label="VFXExpressionCos Float
+cosTheta_b"]
+node15 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float3 ((0.0, 0.0, 0.0))
+ArcCircle_circle_center_b"]
+node16 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float3 ((0.0, 0.0, 2.0))
+Sphere_center_a"]
+node17 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float (0.28)
+Sphere_radius_a"]
+node18 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float (20)
+attractionForce_a"]
+node19 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float (0.1)
+stickDistance_a"]
+node20 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float (50)
+stickForce_a"]
+node21 [shape="box" color="cyan" style="filled" label="VFXBuiltInExpression Float (DeltaTime)
+deltaTime_a
+deltaTime_b
+deltaTime_c
+deltaTime_a
+deltaTime_b"]
+node22 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float3 ((0.5, 5.0, 1.0))
+A_c"]
+node23 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float3 ((0.8, 15.0, 1.0))
+B_c"]
+node24 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float (0.02)
+A_d"]
+node25 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float (0.08)
+B_d"]
+node26 [shape="box" color="cyan" style="filled" label="VFXExpressionBakeCurve Float4
+Size_e"]
+node27 [shape="box" color="lightslategray" style="filled" label="VFXValue`1 Curve (UnityEngine.AnimationCurve)"]
+node28 [shape="box" color="cyan" style="filled" label="VFXExpressionCombine Float3
+Color_f"]
+node29 [shape="box" label="VFXExpressionExtractComponent Float"]
+node30 [shape="box" label="VFXValue`1 Float4 ((0.0, 2.8, 0.0, 0.0))"]
+node31 [shape="box" label="VFXExpressionExtractComponent Float"]
+node32 [shape="box" label="VFXExpressionExtractComponent Float"]
+node33 [shape="box" color="cyan" style="filled" label="VFXExpressionBakeGradient Float
+Color_g"]
+node34 [shape="box" color="lightslategray" style="filled" label="VFXValue`1 ColorGradient (UnityEngine.Gradient)"]
+node35 [shape="box" color="steelblue" style="filled" label="VFXTexture2DValue Texture2D (Default-Particle (UnityEngine.Texture2D))
+mainTexture"]
+node36 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float3 ((-0.3, 0.2, -0.3))
+A_a"]
+node37 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float3 ((0.3, 1.0, 0.3))
+B_a"]
+node38 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float (0.9)
+Lifetime_b"]
+node39 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float (2)
+Size_b"]
+node40 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float3 ((1.0, 1.0, 1.0))
+Color_c"]
+node41 [shape="box" color="cyan" style="filled" label="VFXExpressionBakeGradient Float
+Color_d"]
+node42 [shape="box" color="lightslategray" style="filled" label="VFXValue`1 ColorGradient (UnityEngine.Gradient)"]
+node43 [shape="box" color="steelblue" style="filled" label="VFXTexture2DValue Texture2D (star_11 (UnityEngine.Texture2D))
+mainTexture"]
+node6 -> node8 [headlabel="0"]
+node9 -> node8 [headlabel="1"]
+node11 -> node10 
+node12 -> node11 [headlabel="0"]
+node13 -> node11 [headlabel="1"]
+node11 -> node14 
+node27 -> node26 
+node29 -> node28 [headlabel="0"]
+node31 -> node28 [headlabel="1"]
+node32 -> node28 [headlabel="2"]
+node30 -> node29 
+node30 -> node31 
+node30 -> node32 
+node34 -> node33 
+node42 -> node41 
+}

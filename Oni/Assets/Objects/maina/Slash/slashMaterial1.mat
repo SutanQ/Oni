@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: slashMaterial1
+  m_Shader: {fileID: -6465566751694194690, guid: f507c6505e3463641ad30a75e566ad86,
+    type: 3}
+  m_ShaderKeywords: BOOLEAN_CA9D1AC6_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_90210E7D:
+        m_Texture: {fileID: 2800000, guid: ba91ef876922e934c8032ad58e510a42, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 84151a58504ac7643ad28308bef06c09, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: -0.1}
+    - _MaskTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - BOOLEAN_15B78E78: 0
+    - BOOLEAN_214BDA66: 0
+    - BOOLEAN_CA9D1AC6: 1
+    - Vector1_18CD6163: 0.05
+    - Vector1_35661A2: 0.37
+    - Vector1_6E30068D: 0.1
+    - Vector1_70FA963C: 0
+    - Vector1_7C49868: 0.68
+    - Vector1_A2984BC: 0.1
+    - Vector1_B4E5C47D: 0.11
+    - Vector1_E514496D: 4
+    - Vector1_FC9BCA76: 1
+    - _AddValue: 0.74
+    - _Glossiness: 0.5
+    - _NoiseAmount: 0.5
+    - _NoiseScale: 10
+    - _NoiseSpeed: 0.2
+    - _Normaloffset: 0.5
+    - _Normalstrength: 8
+    - _Power: 1
+    - _StepThreshold: 0.01
+    - _StepThreshold2: 0.36
+    m_Colors:
+    - Vector2_B02498D3: {r: 0, g: 0, b: 0, a: 0}
+    - Vector2_FB60315F: {r: 1, g: 1, b: 0, a: 0}
+    - Vector4_705B4AF6: {r: 1, g: 1, b: 0, a: -0.1}
+    - Vector4_A26BA8B4: {r: 0, g: 1, b: -0.49, a: -1.28}
+    - _Color: {r: 0.87058824, g: 0.87058824, b: 0.87058824, a: 1}
+    - _RemapVector: {r: 0, g: 1, b: 0.2, a: 0.93}
