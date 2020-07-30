@@ -16,8 +16,17 @@ ModelImporter:
       74: -7352007257319621400
     second: rig|Attack1.001
   - first:
+      74: 459831167850025825
+    second: rig|Attack1.002
+  - first:
       74: 2201242382962465064
     second: rig|Attack2
+  - first:
+      74: -9207490026155501679
+    second: rig|Attack2.001
+  - first:
+      74: 5535789346110348873
+    second: rig|Attack2.002
   - first:
       74: -2160636895069638587
     second: rig|AttackC1
@@ -33,6 +42,9 @@ ModelImporter:
   - first:
       74: 7246558666234746065
     second: rig|AttackJ1.001
+  - first:
+      74: -3880784275904931907
+    second: rig|AttackJ1v2
   - first:
       74: -7329009192582655746
     second: rig|AttackJ2
@@ -107,7 +119,7 @@ ModelImporter:
     second: rig|Walk
   externalObjects: {}
   materials:
-    materialImportMode: 1
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1

@@ -12,6 +12,7 @@ public class PlayerDamageStateMachine : StateMachineBehaviour
         damegeable = animator.GetComponent<Damegeable>();
         damegeable.SetCanMove(0);
         animator.SetBool(IDManager.damage_ID, true);  //在Damegeable.cs的TakeDamege就會先改為true，以避免受到傷害後還來不及將damage改為true就讓dodge可以執行。
+        animator.GetComponent<ThirdPersonMovement>().useGravity = true;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -29,6 +30,7 @@ public class PlayerDamageStateMachine : StateMachineBehaviour
         animator.ResetTrigger(IDManager.dodgeBack_ID);
         animator.ResetTrigger(IDManager.dodgeSide_ID);
         damegeable.SetCanMove(1);
+        
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

@@ -211,6 +211,7 @@ public class ThirdPersonMovement : MonoBehaviour
             case InputActionPhase.Started:
                 if (isGrounded)
                 {
+                    attackIndex = anim.GetInteger(IDManager.Attack_ID);
                     attackIndex++;
                     anim.SetInteger(IDManager.Attack_ID, attackIndex);
                 }
@@ -773,6 +774,8 @@ public class ThirdPersonMovement : MonoBehaviour
 
     public void Weapon_FadeIn(float t, int _attackIndex, int _secondIndex = 0)
     {
+        if (weapon_Attack_Groups[_attackIndex - 1].weapon_Attack_Datas[_secondIndex].weapon_coroutine != null)
+            StopCoroutine(weapon_Attack_Groups[_attackIndex - 1].weapon_Attack_Datas[_secondIndex].weapon_coroutine);
         weapon_Attack_Groups[_attackIndex - 1].weapon_Attack_Datas[_secondIndex].weapon_coroutine = StartCoroutine(wFadeIn(t, _attackIndex, _secondIndex));
     }
 
