@@ -112,7 +112,9 @@ public class ThirdPersonMovement : MonoBehaviour
                 weapon_Attack_Data.weapon_start_localRotation = weapon_Attack_Data.weapon.localRotation;
                 weapon_Attack_Data.weapon_ghost_material = new Material[weapon_Attack_Data.weapon_materials.Length];
                 for (int k = 0; k < weapon_Attack_Data.weapon_materials.Length; k++)
+                {
                     weapon_Attack_Data.weapon_ghost_material[k] = weapon_Attack_Data.ghost_material;
+                }
             }
         }
         for (int i = 0; i < weapon_Attack_Groups.Length; i++)
