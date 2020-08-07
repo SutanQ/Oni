@@ -20,6 +20,8 @@ public class Damage : MonoBehaviour
     public GameObject endEffectPrefab;
 
     [Header("Hit Time Scale")]
+    [ColorUsage(true, true)]
+    public Color hitColor = new Color(16, 16, 16, 1);
     public bool useHitTimeScale = false;
     [Range(0.0f, 1.0f)]
     public float startHitTimeScale = 0.1f;
@@ -118,7 +120,7 @@ public class Damage : MonoBehaviour
         {
             Vector3 closestPoint = collider.ClosestPoint(transform.position);
             Vector3 objectPos = damegeable.hitTransform.worldToLocalMatrix.MultiplyPoint(closestPoint);
-
+            damegeable.hitMaterial.SetColor(IDManager.hitColorID, hitColor);
             damegeable.hitMaterial.SetVector(IDManager.hitPosID, new Vector4(objectPos.x, objectPos.y, objectPos.z, 0.0f)); //擊中的部位座標(object position)
             damegeable.hitMaterial.SetFloat(IDManager.hitStrengthID, 0.15f);  //擊中抖動的Strength
             damegeable.PlayHitColorAmount(0.8f);   //擊中發光的特效顯示時間

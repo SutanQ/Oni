@@ -521,17 +521,25 @@ public class ThirdPersonMovement : MonoBehaviour
 
             if (isLock)
             {
-                //Vector3 moveDir = (Quaternion.AngleAxis(cam.eulerAngles.y, Vector3.up) * direction).normalized;
-                Vector3 moveDir = (Quaternion.AngleAxis(transform.eulerAngles.y, Vector3.up) * direction).normalized;
-                move = moveDir * moveSpeed * Time.deltaTime * directSpeed * (0.5f - Mathf.Abs(h) * 0.2f + v * 0.1f);
-                characterController.Move(move);
+                if (anim.GetBool(IDManager.Attacking_ID) == false)
+                {
+                    //轉頭
+                    //Vector3 moveDir = (Quaternion.AngleAxis(cam.eulerAngles.y, Vector3.up) * direction).normalized;
+                    Vector3 moveDir = (Quaternion.AngleAxis(transform.eulerAngles.y, Vector3.up) * direction).normalized;
+                    move = moveDir * moveSpeed * Time.deltaTime * directSpeed * (0.5f - Mathf.Abs(h) * 0.2f + v * 0.1f);
+                    characterController.Move(move);
+                }
             }
             else
             {
-                //轉頭
-                float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
-                float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref currentVelocity, turnSmoothTime);
-                transform.rotation = Quaternion.Euler(Vector3.up * angle);
+                float targetAngle = 0;
+                if (anim.GetBool(IDManager.Attacking_ID) == false)
+                {
+                    //轉頭
+                    targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+                    float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref currentVelocity, turnSmoothTime);
+                    transform.rotation = Quaternion.Euler(Vector3.up * angle);
+                }
 
                 //轉向後的移動方向
                 if (anim.GetInteger(IDManager.Attack_ID) == 0)

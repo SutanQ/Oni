@@ -25,6 +25,7 @@ public class IDManager
     public static int ClimbDown_ID = Animator.StringToHash("climbDown");
     public static int Cskill_ID = Animator.StringToHash("Cskill");
     public static int Attack_ID = Animator.StringToHash("Attack");
+    public static int Attacking_ID = Animator.StringToHash("Attacking");
 
     //Shader ID
     public static int Forward_ID = Shader.PropertyToID("_Forward");
@@ -32,4 +33,5 @@ public class IDManager
     public static int hitStrengthID = Shader.PropertyToID("_HitStrength");
     public static int hitPosID = Shader.PropertyToID("_HitPos");
     public static int hitColorAmountID = Shader.PropertyToID("_HitColorAmount");
+    public static int hitColorID = Shader.PropertyToID("_HitColor");
 }

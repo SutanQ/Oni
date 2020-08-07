@@ -65,6 +65,7 @@ public class AttackStateMachine : StateMachineBehaviour
         //animator.ResetTrigger("Cskill");
         specialAttack = 0;
         animator.SetInteger(IDManager.Cskill_ID, 0);
+        animator.SetBool(IDManager.Attacking_ID, true);
         characterController = animator.GetComponent<CharacterController>();
         thirdPerson = animator.GetComponent<ThirdPersonMovement>();
 
@@ -216,12 +217,17 @@ public class AttackStateMachine : StateMachineBehaviour
                 }
             }
         }
+
+        if(stateInfo.normalizedTime >= 0.90f)
+        {
+            animator.SetBool(IDManager.Attacking_ID, false);
+        }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        
+        animator.SetBool(IDManager.Attacking_ID, false);
         if (specialAttack > 0 && !specialWeaponAppear)
         {
             ;
