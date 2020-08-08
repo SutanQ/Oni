@@ -109,4 +109,4 @@ public class CameraShakeManager : MonoBehaviour
 
 }
 
-public enum CameraImpulseIndex { C1, C2, C3, J1, None};
+public enum CameraImpulseIndex { C1, C2, C3, J1, LockAtk1, None};

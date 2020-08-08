@@ -25,6 +25,7 @@ public class Weapon_Cskill : MonoBehaviour
             case ActionIndex.C2: StartCoroutine(ActionC2(duration)); break;
             case ActionIndex.C3: StartCoroutine(ActionC3(duration)); break;
             case ActionIndex.J1: StartCoroutine(ActionJ1(duration)); break;
+            case ActionIndex.LockAtk1: StartCoroutine(ActionLock1(duration)); break;
         }
         /*
         if (actionIndex == ActionIndex.None)
@@ -112,6 +113,23 @@ public class Weapon_Cskill : MonoBehaviour
         }
     }
 
+    protected virtual IEnumerator ActionLock1(float t)
+    {
+        float tt = 0;
+        transform.SetParent(null);
+        while (tt < t)
+        {
+            transform.position += transform.forward * 2.0f * Time.deltaTime;
+            tt += Time.deltaTime;
+            yield return null;
+        }
+
+        if (OnActionEnd != null)
+        {
+            OnActionEnd(fadeOut_t, fadeOut_attackIndex, fadeOut_secondIndex);
+        }
+    }
+
 }
 
-public enum ActionIndex { C1, C2, C3, J1, None};
+public enum ActionIndex { C1, C2, C3, J1, LockAtk1, None};

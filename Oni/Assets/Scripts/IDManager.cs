@@ -10,6 +10,7 @@ public class IDManager
     public static int Lock_ID = Animator.StringToHash("Lock");
     public static int Speed_ID = Animator.StringToHash("Speed");
     public static int XSpeed_ID = Animator.StringToHash("XSpeed");
+    public static int YSpeed_ID = Animator.StringToHash("YSpeed");
     public static int Ground_ID = Animator.StringToHash("Ground");
     public static int LeftHandGrip_ID = Animator.StringToHash("LeftHandGrip");
     public static int RightHandGrip_ID = Animator.StringToHash("RightHandGrip");

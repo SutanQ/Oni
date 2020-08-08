@@ -34,6 +34,9 @@ public class Dagger_Cskill : Weapon_Cskill
     public Vector3 offsetPosJ1;
     public Vector3 RotationJ1;
 
+    [Header("Lock Atk1")]
+    public ParticleSystem[] lockAtk1_ps;
+
     private void Start()
     {
         holderStatus = holder.GetComponent<Damegeable>();
@@ -183,6 +186,14 @@ public class Dagger_Cskill : Weapon_Cskill
             OnActionEnd(fadeOut_t, fadeOut_attackIndex, fadeOut_secondIndex);
         }
         */
+        yield return null;
+
+    }
+
+    protected override IEnumerator ActionLock1(float t)
+    {
+        for (int i = 0; i < lockAtk1_ps.Length; i++)
+            lockAtk1_ps[i].Play();
         yield return null;
 
     }

@@ -211,12 +211,12 @@ public class ThirdPersonMovement : MonoBehaviour
                 break;
 
             case InputActionPhase.Started:
-                if (isGrounded)
-                {
+                //if (isGrounded)
+                //{
                     attackIndex = anim.GetInteger(IDManager.Attack_ID);
                     attackIndex++;
                     anim.SetInteger(IDManager.Attack_ID, attackIndex);
-                }
+                //}
                 break;
 
             case InputActionPhase.Canceled:
@@ -778,6 +778,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
     void StateMachine()
     {
+        anim.SetFloat(IDManager.YSpeed_ID, velocity.y);
         //設定BODY材質球的Forward參數讓ShadowMask能在背光時無效
         bodyMaterial.SetVector(IDManager.Forward_ID, transform.forward);
     }
