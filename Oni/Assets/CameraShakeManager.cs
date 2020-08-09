@@ -26,11 +26,7 @@ public class CameraShakeManager : MonoBehaviour
             Instance = this;
         else
             Destroy(this);
-    }
 
-    // Start is called before the first frame update
-    void Start()
-    {
         cinemachineBasic1 = cinemachineFree.GetRig(0).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
         cinemachineBasic2 = cinemachineFree.GetRig(1).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
         cinemachineBasic3 = cinemachineFree.GetRig(2).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
@@ -38,6 +34,12 @@ public class CameraShakeManager : MonoBehaviour
         defaultRadius1 = cinemachineFree.m_Orbits[0].m_Radius;
         defaultRadius2 = cinemachineFree.m_Orbits[1].m_Radius;
         defaultRadius3 = cinemachineFree.m_Orbits[2].m_Radius;
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
     }
 
     // Update is called once per frame
@@ -109,4 +111,4 @@ public class CameraShakeManager : MonoBehaviour
 
 }
 
-public enum CameraImpulseIndex { C1, C2, C3, J1, LockAtk1, None};
+public enum CameraImpulseIndex { C1, C2, C3, J1, LockAtk1, GroundImpact, None};
