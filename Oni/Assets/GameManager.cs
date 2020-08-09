@@ -15,6 +15,10 @@ public class GameManager : MonoBehaviour
     public Volume[] volumes;
     Coroutine volumeCoroutine;
 
+    [Header("Ground Impact")]
+    public float GroundImpact_ForceTrashold = -4.0f;
+    public GameObject VFX_GroundImpactPrefab;
+
     private void Awake()
     {
         if (Instance == null)

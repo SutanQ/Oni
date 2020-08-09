@@ -322,8 +322,15 @@ public class Enemy : Damegeable
         //判斷是否在地上
         if (groundCheck)
         {
-            isGrounded = Physics.CheckSphere(transform.position, groundCheckDistance, groundMask);
+            isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckDistance, groundMask);
             anim.SetBool(IDManager.Ground_ID, isGrounded);
+
+            //產生衝擊波
+            if(isGrounded && makeGroundImpact)
+            {
+                makeGroundImpact = false;
+                Instantiate(GameManager.Instance.VFX_GroundImpactPrefab, groundCheck.position, Quaternion.identity);
+            }
 
             if(isGrounded && gravityY < 0)
                 gravityY = -2.0f;

@@ -21,6 +21,7 @@ public class Damegeable : MonoBehaviour
     //    Coroutine coroutine;
     bool doTimer = false;
     float takeInvincibleTimer;
+    public bool makeGroundImpact = false;
 
     [Header("Hit Materials")]
     public bool UseHitMaterial = false;
@@ -79,6 +80,10 @@ public class Damegeable : MonoBehaviour
         gravityY = f.y;
         addForceVity.x = f.x;
         addForceVity.z = f.z;
+
+        //如果向下的衝擊超過-4.0f就會在著地時產生衝擊波
+        if (f.y <= GameManager.Instance.GroundImpact_ForceTrashold)
+            makeGroundImpact = true;
     }
 
     public virtual void TakeDamege(int dmg, DamageType damageType, Vector3 force, bool takeDamageTrigger, bool takeInvincibleTime = true)
