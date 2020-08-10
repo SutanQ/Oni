@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class Enemy : Damegeable
 {
@@ -66,6 +67,11 @@ public class Enemy : Damegeable
     protected string nowEnemyEffectName;
     protected string nowEnemyAudioName;
 
+    [Header("UI")]
+    public GameObject UI_HP;
+    public Image UI_HPbar;
+    Animator UI_Anim;
+
     Vector3 moveDir;
     Vector3 dir;
 
@@ -73,7 +79,11 @@ public class Enemy : Damegeable
     protected override void Start()
     {
         base.Start();
-        
+        if (UI_HP)
+        {
+            UI_HP.GetComponent<Canvas>().worldCamera = Camera.main;
+            UI_Anim = UI_HP.GetComponent<Animator>();
+        }
         player = FindObjectOfType<Player>();
         playerGO = player.transform;
         //rb = GetComponent<Rigidbody>();
@@ -306,6 +316,11 @@ public class Enemy : Damegeable
     {
         if(useEnemyManager)
             EnemyManager.Instance.RemoveEnemy(this);
+        if (UI_HP)
+        {
+            UpdateUI();
+            UI_Anim.SetBool(IDManager.FadeIn_ID, false);
+        }
         base.die();
     }
 
@@ -349,7 +364,9 @@ public class Enemy : Damegeable
             else  //若沒有目標則進行閒逛(且有設定IdleWalkPath)
                 IdleWalk();
         }
-        
+
+        UpdateAddForce();
+        /*
         //計算外力(受drag而逐漸歸零)
         int sign = addForceVity.x >= 0 ? 1 : -1;
         addForceVity.x = (Mathf.Abs(addForceVity.x) - drag * Time.deltaTime);
@@ -359,7 +376,7 @@ public class Enemy : Damegeable
         addForceVity.z = (Mathf.Abs(addForceVity.z) - drag * Time.deltaTime);
         if (addForceVity.z <= 0)  addForceVity.z = 0;
         else                      addForceVity.z *= sign;
-
+        */
 
         //重力、移動及外力的位移 (mDir為移動、addForceVity為外力)
         if (useGravity)
@@ -376,6 +393,33 @@ public class Enemy : Damegeable
 
         //更新材質球的被擊中效果(位移及變亮)
         UpdateHitMaterial();
+
+        UpdateUI();
+    }
+
+    
+
+    void UpdateUI()
+    {
+        if (UI_HP == null) return;
+
+        if (Time.time > UI_Timer)
+        {
+            UI_Anim.SetBool(IDManager.FadeIn_ID, false);
+            return;
+        }
+
+        if(!UI_Anim.GetBool(IDManager.FadeIn_ID))
+            UI_Anim.SetBool(IDManager.FadeIn_ID, true);
+
+        //面向攝影機
+        Vector3 v = Camera.main.transform.transform.position - UI_HP.transform.position;
+        v.x = v.z = 0.0f;
+        UI_HP.transform.LookAt(Camera.main.transform.position - v);
+        UI_HP.transform.Rotate(0, 180, 0);
+
+        //更新HP顯示
+        UI_HPbar.fillAmount = Mathf.Lerp(UI_HPbar.fillAmount, (float)status.hp / status.maxHp, GameManager.Instance.UI_HP_duration);
     }
 
     private void OnDrawGizmosSelected()

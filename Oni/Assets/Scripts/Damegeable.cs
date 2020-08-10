@@ -29,7 +29,8 @@ public class Damegeable : MonoBehaviour
     public Transform hitTransform;
     public Material hitMaterial;
     
-    Coroutine hitCoroutine; 
+    Coroutine hitCoroutine;
+    protected float UI_Timer;
 
     public void SetCanMove(int _b)
     {
@@ -83,14 +84,19 @@ public class Damegeable : MonoBehaviour
 
         //如果向下的衝擊超過-4.0f就會在著地時產生衝擊波
         if (f.y <= GameManager.Instance.GroundImpact_ForceTrashold)
+        {
             makeGroundImpact = true;
+            Instantiate(GameManager.Instance.VFX_ImpactHitPrefab, transform.position, Quaternion.identity);
+        }
     }
 
     public virtual void TakeDamege(int dmg, DamageType damageType, Vector3 force, bool takeDamageTrigger, bool takeInvincibleTime = true)
     {
         if (status.isDead) return;
 
-        if(doTimer && Time.time >= takeInvincibleTimer)
+        UI_Timer = Time.time + GameManager.Instance.UI_HP_Time;
+
+        if (doTimer && Time.time >= takeInvincibleTimer)
         {
             doTimer = false;
             status.canTakeDamage = true;
@@ -237,6 +243,26 @@ public class Damegeable : MonoBehaviour
             yield return null;
         }
         hitMaterial.SetFloat(IDManager.hitColorAmountID, 0.0f);
+    }
+
+    public void UpdateAddForce()
+    {
+        float forceTranshold = 0.1f;
+
+        //計算外力(受drag而逐漸歸零)
+        int sign = addForceVity.x >= 0 ? 1 : -1;
+        //addForceVity.x = (Mathf.Abs(addForceVity.x) - drag * Time.deltaTime);
+        addForceVity.x = Mathf.Abs(addForceVity.x) * (1 - Time.deltaTime * drag);
+        //if (addForceVity.x <= 0) addForceVity.x = 0;
+        if (addForceVity.x <= forceTranshold) addForceVity.x = 0;
+        else addForceVity.x *= sign;
+
+        sign = addForceVity.z >= 0 ? 1 : -1;
+        //addForceVity.z = (Mathf.Abs(addForceVity.z) - drag * Time.deltaTime);
+        addForceVity.z = Mathf.Abs(addForceVity.z) * (1 - Time.deltaTime * drag);
+        //if (addForceVity.z <= 0) addForceVity.z = 0;
+        if (addForceVity.z <= forceTranshold) addForceVity.z = 0;
+        else addForceVity.z *= sign;
     }
 }
 

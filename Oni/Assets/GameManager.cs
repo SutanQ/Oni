@@ -17,7 +17,12 @@ public class GameManager : MonoBehaviour
 
     [Header("Ground Impact")]
     public float GroundImpact_ForceTrashold = -4.0f;
+    public GameObject VFX_ImpactHitPrefab;
     public GameObject VFX_GroundImpactPrefab;
+
+    [Header("UI")]
+    public float UI_HP_Time = 3.0f;     //UI顯示時間
+    public float UI_HP_duration = 0.2f; //血條變化速度
 
     private void Awake()
     {

@@ -590,6 +590,8 @@ public class ThirdPersonMovement : MonoBehaviour
         }
         */
 
+        playerDamageable.UpdateAddForce();
+        /*
         //計算外力(受drag而逐漸歸零)
         int sign = playerDamageable.addForceVity.x >= 0 ? 1 : -1;
         playerDamageable.addForceVity.x = (Mathf.Abs(playerDamageable.addForceVity.x) - playerDamageable.drag * Time.deltaTime);
@@ -604,7 +606,7 @@ public class ThirdPersonMovement : MonoBehaviour
             playerDamageable.addForceVity.z = 0;
         else
             playerDamageable.addForceVity.z *= sign;
-
+        */
         //重力
         if (useGravity && !anim.GetBool(IDManager.Climb_ID))
         {

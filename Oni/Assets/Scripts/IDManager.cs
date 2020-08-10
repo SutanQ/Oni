@@ -28,6 +28,10 @@ public class IDManager
     public static int Attack_ID = Animator.StringToHash("Attack");
     public static int Attacking_ID = Animator.StringToHash("Attacking");
 
+    //UI
+    public static int FadeIn_ID = Animator.StringToHash("FadeIn");
+    public static int FadeOut_ID = Animator.StringToHash("FadeOut");
+
     //Shader ID
     public static int Forward_ID = Shader.PropertyToID("_Forward");
     public static int PosAmount_ID = Shader.PropertyToID("_PosAmount");
