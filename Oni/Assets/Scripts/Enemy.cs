@@ -70,6 +70,7 @@ public class Enemy : Damegeable
     [Header("UI")]
     public GameObject UI_HP;
     public Image UI_HPbar;
+    public Image UI_HPgreen;
     Animator UI_Anim;
 
     Vector3 moveDir;
@@ -419,7 +420,12 @@ public class Enemy : Damegeable
         UI_HP.transform.Rotate(0, 180, 0);
 
         //更新HP顯示
-        UI_HPbar.fillAmount = Mathf.Lerp(UI_HPbar.fillAmount, (float)status.hp / status.maxHp, GameManager.Instance.UI_HP_duration);
+        float amount = (float)status.hp / status.maxHp;
+        //深血
+        if(!anim.GetBool(IDManager.damage_ID))
+            UI_HPbar.fillAmount = Mathf.Lerp(UI_HPbar.fillAmount, amount, GameManager.Instance.UI_HP_duration);
+        //綠血
+        UI_HPgreen.fillAmount = amount;
     }
 
     private void OnDrawGizmosSelected()
@@ -584,7 +590,12 @@ public class Enemy : Damegeable
             //}
         }
     }
-    
+
+    public override void AnimatorAction()
+    {
+        base.AnimatorAction();
+        walkStraight = false;
+    }
 }
 
 [System.Serializable]

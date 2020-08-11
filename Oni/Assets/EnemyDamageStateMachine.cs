@@ -17,6 +17,7 @@ public class EnemyDamageStateMachine : StateMachineBehaviour
         //rb.useGravity = false;
         damegeable = animator.GetComponent<Damegeable>();
         damegeable.SetCanMove(0);
+        damegeable.AnimatorAction();
         animator.SetBool(IDManager.damage_ID, true);
     }
 

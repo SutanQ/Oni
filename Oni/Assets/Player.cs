@@ -10,6 +10,7 @@ public class Player : Damegeable
     [Header("UI")]
     public float hp_duration = 0.2f; 
     public Image UI_HP;
+    public Image UI_HPgreen;
 
     protected override void Start()
     {
@@ -34,7 +35,12 @@ public class Player : Damegeable
     private void Update()
     {
         //更新HP顯示
-        UI_HP.fillAmount = Mathf.Lerp(UI_HP.fillAmount, (float)status.hp / status.maxHp, hp_duration);
+        float amount = (float)status.hp / status.maxHp;
+        //深血
+        if (!anim.GetBool(IDManager.damage_ID))
+            UI_HP.fillAmount = Mathf.Lerp(UI_HP.fillAmount, amount, hp_duration);
+        //綠血
+        UI_HPgreen.fillAmount = amount;
     }
 
     void UpdateUI()

@@ -334,6 +334,7 @@ MonoBehaviour:
   enemyEffects: []
   UI_HP: {fileID: 9092552402250858761}
   UI_HPbar: {fileID: 9092552401429547459}
+  UI_HPgreen: {fileID: 1505950277485508454}
 --- !u!143 &74483324
 CharacterController:
   m_ObjectHideFlags: 0
@@ -614,6 +615,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9092552401279552984}
     m_Modifications:
+    - target: {fileID: 5249071101122915091, guid: c147a633b8143f843b41a63418f38412,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.7264151
+      objectReference: {fileID: 0}
     - target: {fileID: 5249071102448100309, guid: c147a633b8143f843b41a63418f38412,
         type: 3}
       propertyPath: m_Camera
@@ -746,6 +752,18 @@ RectTransform:
 --- !u!114 &9092552401429547459 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5249071101122915091, guid: c147a633b8143f843b41a63418f38412,
+    type: 3}
+  m_PrefabInstance: {fileID: 3960720602052322000}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1505950277485508454 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2454879248159790518, guid: c147a633b8143f843b41a63418f38412,
     type: 3}
   m_PrefabInstance: {fileID: 3960720602052322000}
   m_PrefabAsset: {fileID: 0}

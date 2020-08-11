@@ -264,6 +264,11 @@ public class Damegeable : MonoBehaviour
         if (addForceVity.z <= forceTranshold) addForceVity.z = 0;
         else addForceVity.z *= sign;
     }
+
+    public virtual void AnimatorAction()
+    {
+        ;
+    }
 }
 
 [System.Serializable]

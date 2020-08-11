@@ -1987,7 +1987,7 @@ MonoBehaviour:
   cancelLockWhenEnter: 1
   cancelLockWhenExit: 0
   useLockTargetDirection: 0
-  XYZ_Length: {x: 0, y: 3, z: 0}
+  XYZ_Length: {x: 0, y: 2, z: 0}
   lengthMultiplier: 3
   animationCurveX:
     serializedVersion: 2
@@ -3382,7 +3382,7 @@ MonoBehaviour:
   cancelLockWhenEnter: 0
   cancelLockWhenExit: 0
   useLockTargetDirection: 0
-  XYZ_Length: {x: 0, y: 3, z: 0}
+  XYZ_Length: {x: 0, y: 5, z: 0}
   lengthMultiplier: 1
   animationCurveX:
     serializedVersion: 2

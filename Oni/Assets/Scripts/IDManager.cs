@@ -32,6 +32,12 @@ public class IDManager
     public static int FadeIn_ID = Animator.StringToHash("FadeIn");
     public static int FadeOut_ID = Animator.StringToHash("FadeOut");
 
+    //Face Trigger
+    public static int angryFace_ID = Animator.StringToHash("angryFace");
+    public static int normalFace_ID = Animator.StringToHash("normalFace");
+    public static int smileFace_ID = Animator.StringToHash("smileFace");
+    public static int damageFace_ID = Animator.StringToHash("damageFace");
+
     //Shader ID
     public static int Forward_ID = Shader.PropertyToID("_Forward");
     public static int PosAmount_ID = Shader.PropertyToID("_PosAmount");
@@ -39,4 +45,6 @@ public class IDManager
     public static int hitPosID = Shader.PropertyToID("_HitPos");
     public static int hitColorAmountID = Shader.PropertyToID("_HitColorAmount");
     public static int hitColorID = Shader.PropertyToID("_HitColor");
+
+    
 }
