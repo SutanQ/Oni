@@ -527,6 +527,11 @@ MonoBehaviour:
     FadeIn: 0.2
     FadeOut: 0.3
     catchFrame: 12
+    useWeaponStatus: 1
+    attack: 6
+    force: {x: 0, y: 2, z: 4}
+    damageType: 0
+    turnOnColWhenCatch: 1
   playAttackParticle: 1
   playParticleFrame: 12
   specialWeaponAppear: 1
@@ -801,6 +806,31 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!1101 &-6597426463991817967
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: damageTrigger
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 1620503687142416820}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 0.75
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1101 &-6453823136759194555
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -1034,6 +1064,28 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1101 &-5910043859509041321
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions: []
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 0}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 1
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 1
+  m_HasExitTime: 1
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1101 &-5881494063549452657
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -1353,6 +1405,11 @@ MonoBehaviour:
     FadeIn: 0.3
     FadeOut: 0.3
     catchFrame: 18
+    useWeaponStatus: 1
+    attack: 8
+    force: {x: 0, y: 0, z: 1}
+    damageType: 0
+    turnOnColWhenCatch: 1
   playAttackParticle: 0
   playParticleFrame: 0
   specialWeaponAppear: 1
@@ -1654,11 +1711,21 @@ MonoBehaviour:
     FadeIn: 0.15
     FadeOut: 0.3
     catchFrame: 20
+    useWeaponStatus: 1
+    attack: 7
+    force: {x: 0, y: 2, z: 3}
+    damageType: 0
+    turnOnColWhenCatch: 1
   - handType: 1
     fadeUnit: 0
     FadeIn: 0.15
     FadeOut: 0.3
     catchFrame: 20
+    useWeaponStatus: 1
+    attack: 7
+    force: {x: 0, y: 2, z: 3}
+    damageType: 0
+    turnOnColWhenCatch: 1
   playAttackParticle: 0
   playParticleFrame: 0
   specialWeaponAppear: 1
@@ -1874,6 +1941,11 @@ MonoBehaviour:
     FadeIn: 0.15
     FadeOut: 0.3
     catchFrame: 6
+    useWeaponStatus: 0
+    attack: 0
+    force: {x: 0, y: 0, z: 0}
+    damageType: 0
+    turnOnColWhenCatch: 1
   playAttackParticle: 0
   playParticleFrame: 0
   specialWeaponAppear: 1
@@ -2088,6 +2160,11 @@ MonoBehaviour:
     FadeIn: 0.3
     FadeOut: 0.3
     catchFrame: 18
+    useWeaponStatus: 1
+    attack: 8
+    force: {x: 0, y: 0, z: 1}
+    damageType: 0
+    turnOnColWhenCatch: 1
   playAttackParticle: 0
   playParticleFrame: 0
   specialWeaponAppear: 1
@@ -3066,6 +3143,11 @@ MonoBehaviour:
     FadeIn: 0.15
     FadeOut: 0.3
     catchFrame: 8
+    useWeaponStatus: 1
+    attack: 2
+    force: {x: 0, y: 3, z: 1}
+    damageType: 0
+    turnOnColWhenCatch: 1
   playAttackParticle: 1
   playParticleFrame: 11
   specialWeaponAppear: 1
@@ -3447,11 +3529,21 @@ MonoBehaviour:
     FadeIn: 0.15
     FadeOut: 0.25
     catchFrame: 5
+    useWeaponStatus: 1
+    attack: 5
+    force: {x: 0, y: -8, z: 0}
+    damageType: 0
+    turnOnColWhenCatch: 1
   - handType: 1
     fadeUnit: 0
     FadeIn: 0.15
     FadeOut: 0.25
     catchFrame: 5
+    useWeaponStatus: 1
+    attack: 5
+    force: {x: 0, y: -8, z: 0}
+    damageType: 0
+    turnOnColWhenCatch: 1
   playAttackParticle: 1
   playParticleFrame: 11
   specialWeaponAppear: 1
@@ -3902,6 +3994,11 @@ MonoBehaviour:
     FadeIn: 0.15
     FadeOut: 0.25
     catchFrame: 8
+    useWeaponStatus: 1
+    attack: 4
+    force: {x: 0, y: 0.4, z: 5}
+    damageType: 0
+    turnOnColWhenCatch: 1
   playAttackParticle: 1
   playParticleFrame: 8
   specialWeaponAppear: 1
@@ -3986,6 +4083,34 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1102 &1620503687142416820
+AnimatorState:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: rig_damage
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions:
+  - {fileID: -5910043859509041321}
+  m_StateMachineBehaviours:
+  - {fileID: 8596801354941676427}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 6683cc8be6972094981cc343204d2530, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!114 &1813596469214952915
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3993,7 +4118,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e94796bacde476149b3b08a86612f79f, type: 3}
   m_Name: 
@@ -4158,6 +4283,11 @@ MonoBehaviour:
     FadeIn: 0.15
     FadeOut: 0.3
     catchFrame: 8
+    useWeaponStatus: 0
+    attack: 2
+    force: {x: 0, y: 3, z: 1.5}
+    damageType: 0
+    turnOnColWhenCatch: 1
   playAttackParticle: 1
   playParticleFrame: 8
   specialWeaponAppear: 1
@@ -4700,6 +4830,11 @@ MonoBehaviour:
     FadeIn: 0.15
     FadeOut: 0.3
     catchFrame: 8
+    useWeaponStatus: 1
+    attack: 2
+    force: {x: 0, y: 3, z: 1}
+    damageType: 0
+    turnOnColWhenCatch: 1
   playAttackParticle: 1
   playParticleFrame: 11
   specialWeaponAppear: 1
@@ -4862,6 +4997,11 @@ MonoBehaviour:
     FadeIn: 0.2
     FadeOut: 0.3
     catchFrame: 12
+    useWeaponStatus: 1
+    attack: 4
+    force: {x: 0, y: 6.8, z: 0.5}
+    damageType: 0
+    turnOnColWhenCatch: 1
   playAttackParticle: 0
   playParticleFrame: 12
   specialWeaponAppear: 1
@@ -5267,6 +5407,11 @@ MonoBehaviour:
     FadeIn: 0.15
     FadeOut: 0.3
     catchFrame: 8
+    useWeaponStatus: 1
+    attack: 2
+    force: {x: 0, y: 3, z: 1.5}
+    damageType: 0
+    turnOnColWhenCatch: 1
   playAttackParticle: 1
   playParticleFrame: 11
   specialWeaponAppear: 1
@@ -5710,6 +5855,11 @@ MonoBehaviour:
     FadeIn: 0.15
     FadeOut: 0.3
     catchFrame: 6
+    useWeaponStatus: 0
+    attack: 0
+    force: {x: 0, y: 0, z: 0}
+    damageType: 0
+    turnOnColWhenCatch: 1
   playAttackParticle: 0
   playParticleFrame: 0
   specialWeaponAppear: 1
@@ -5861,11 +6011,21 @@ MonoBehaviour:
     FadeIn: 0.2
     FadeOut: 0.3
     catchFrame: 7
+    useWeaponStatus: 1
+    attack: 5
+    force: {x: 0, y: 3, z: 1}
+    damageType: 0
+    turnOnColWhenCatch: 1
   - handType: 1
     fadeUnit: 0
     FadeIn: 0.2
     FadeOut: 0.3
     catchFrame: 7
+    useWeaponStatus: 1
+    attack: 5
+    force: {x: 0, y: 3, z: 1}
+    damageType: 0
+    turnOnColWhenCatch: 1
   playAttackParticle: 1
   playParticleFrame: 8
   specialWeaponAppear: 1
@@ -5905,7 +6065,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 6683cc8be6972094981cc343204d2530, type: 2}
+  m_Motion: {fileID: 0}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -6231,12 +6391,16 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: 8651963288458497984}
     m_Position: {x: -720, y: -310, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 1620503687142416820}
+    m_Position: {x: 850, y: 590, z: 0}
   m_ChildStateMachines: []
-  m_AnyStateTransitions: []
+  m_AnyStateTransitions:
+  - {fileID: -6597426463991817967}
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 60, y: -260, z: 0}
+  m_AnyStatePosition: {x: 880, y: 680, z: 0}
   m_EntryPosition: {x: 40, y: 160, z: 0}
   m_ExitPosition: {x: 880, y: 500, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
@@ -6447,11 +6611,21 @@ MonoBehaviour:
     FadeIn: 0.15
     FadeOut: 0.3
     catchFrame: 4
+    useWeaponStatus: 1
+    attack: 2
+    force: {x: 0, y: 3, z: 1}
+    damageType: 0
+    turnOnColWhenCatch: 1
   - handType: 1
     fadeUnit: 0
     FadeIn: 0.15
     FadeOut: 0.3
     catchFrame: 4
+    useWeaponStatus: 1
+    attack: 2
+    force: {x: 0, y: 3, z: 1}
+    damageType: 0
+    turnOnColWhenCatch: 1
   playAttackParticle: 0
   playParticleFrame: 14
   specialWeaponAppear: 0
@@ -6519,6 +6693,18 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!114 &8596801354941676427
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e94796bacde476149b3b08a86612f79f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1101 &8625334806880117008
 AnimatorStateTransition:
   m_ObjectHideFlags: 1

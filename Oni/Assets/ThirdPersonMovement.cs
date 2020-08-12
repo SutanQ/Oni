@@ -963,6 +963,22 @@ public class ThirdPersonMovement : MonoBehaviour
         RigidBodyCollider.enabled = !b;
     }
 
+    public void SetWeaponStatus(int atk, Vector3 force, DamageType damageType, int _attackIndex, int _secondIndex = 0)
+    {
+        Weapon_Attack_Data weapon_Attack_Data = weapon_Attack_Groups[_attackIndex - 1].weapon_Attack_Datas[_secondIndex];
+        Damage dmg = weapon_Attack_Data.weapon.GetComponent<Damage>();
+        dmg.Force = force;
+        dmg.damage = atk;
+        dmg.damageType = damageType;
+    }
+
+    public void SetWeaponCollider(bool turnOn, int _attackIndex, int _secondIndex = 0)
+    {
+        Weapon_Attack_Data weapon_Attack_Data = weapon_Attack_Groups[_attackIndex - 1].weapon_Attack_Datas[_secondIndex];
+        Collider collider = weapon_Attack_Data.weapon.GetComponent<Collider>();
+        collider.enabled = turnOn;
+    }
+
     /*
     void OnControllerColliderHit(ControllerColliderHit hit)
     {

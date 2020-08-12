@@ -37,7 +37,7 @@ public class Enemy : Damegeable
     public Transform groundCheck;
     public float groundCheckDistance = 0.1f;
     public LayerMask groundMask;
-    protected bool isGrounded = false;
+    
 
     [Header("Idle Walk Path")]
     public bool walkStraight = false;
@@ -341,11 +341,12 @@ public class Enemy : Damegeable
             isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckDistance, groundMask);
             anim.SetBool(IDManager.Ground_ID, isGrounded);
 
-            //產生衝擊波
+            //落地產生衝擊波
             if(isGrounded && makeGroundImpact)
             {
                 makeGroundImpact = false;
-                Instantiate(GameManager.Instance.VFX_GroundImpactPrefab, groundCheck.position, Quaternion.identity);
+                TakeDamege(GameManager.Instance.GroundDamage, DamageType.Physic, Vector3.up * GameManager.Instance.GroundBoundForce, true, false);         //落地傷害
+                Instantiate(GameManager.Instance.VFX_GroundImpactPrefab, groundCheck.position, Quaternion.identity); //落地特效
             }
 
             if(isGrounded && gravityY < 0)

@@ -116,6 +116,14 @@ public class AttackStateMachine : StateMachineBehaviour
 
             //float gravityY = AreaOfCurveGravity(0, weapon_Datas[i].catchPercent, stateInfo.length, thirdPerson.GetVelocity().y, thirdPerson.upGravity, thirdPerson.downGravity);
             thirdPerson.weaponCatchToHolder(thisAttackIndex, thisAttackIndex, offsetCurve * lengthMultiplier * Time.deltaTime, i);
+
+            //設定武器的能力數值及Collider
+            if (weapon_Datas[i].useWeaponStatus)
+            {
+                thirdPerson.SetWeaponStatus(weapon_Datas[i].attack, weapon_Datas[i].force, weapon_Datas[i].damageType, thisAttackIndex, i);
+                if(weapon_Datas[i].turnOnColWhenCatch)
+                    thirdPerson.SetWeaponCollider(false, thisAttackIndex, i);
+            }
         }
 
         if (playAttackParticle)
@@ -123,6 +131,7 @@ public class AttackStateMachine : StateMachineBehaviour
             playParticleNomalize = (float)playParticleFrame / Frame;
             playedParticle = false;
         }
+
 
         //後結果特效
         if(useVolume)
@@ -203,6 +212,12 @@ public class AttackStateMachine : StateMachineBehaviour
                     case HandType.None: break;
                 }
                 thirdPerson.weaponCatchToHolder(0, thisAttackIndex, Vector3.zero, i);
+
+                //設定武器的Collider
+                if (weapon_Datas[i].useWeaponStatus && weapon_Datas[i].turnOnColWhenCatch)
+                {
+                    thirdPerson.SetWeaponCollider(true, thisAttackIndex, i);
+                }
             }
         }
 
@@ -253,6 +268,12 @@ public class AttackStateMachine : StateMachineBehaviour
                     case HandType.Right: thirdPerson.RightHandGrip(0); break;
                     case HandType.Left: thirdPerson.LeftHandGrip(0); break;
                     case HandType.None: break;
+                }
+
+                //設定武器的能力數值及Collider
+                if (weapon_Datas[i].useWeaponStatus && weapon_Datas[i].turnOnColWhenCatch)
+                {
+                    thirdPerson.SetWeaponCollider(true, thisAttackIndex, i);
                 }
             }
             /*
@@ -372,5 +393,12 @@ public class AttackStateMachine : StateMachineBehaviour
         public int catchFrame;
         protected internal bool catched;
         protected internal float catchPercent;
+
+        [Header("Weapon Status")]
+        public bool useWeaponStatus = false;
+        public int attack = 0;
+        public Vector3 force;
+        public DamageType damageType;
+        public bool turnOnColWhenCatch = true;
     }
 }

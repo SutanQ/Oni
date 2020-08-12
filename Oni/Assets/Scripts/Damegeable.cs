@@ -31,6 +31,7 @@ public class Damegeable : MonoBehaviour
     
     Coroutine hitCoroutine;
     protected float UI_Timer;
+    protected bool isGrounded = false;
 
     public void SetCanMove(int _b)
     {
@@ -83,7 +84,7 @@ public class Damegeable : MonoBehaviour
         addForceVity.z = f.z;
 
         //如果向下的衝擊超過-4.0f就會在著地時產生衝擊波
-        if (f.y <= GameManager.Instance.GroundImpact_ForceTrashold)
+        if (f.y <= GameManager.Instance.GroundImpact_ForceTrashold && !isGrounded)
         {
             makeGroundImpact = true;
             Instantiate(GameManager.Instance.VFX_ImpactHitPrefab, transform.position, Quaternion.identity);
