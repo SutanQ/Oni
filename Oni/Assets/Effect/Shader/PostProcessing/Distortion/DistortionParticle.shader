@@ -3,7 +3,8 @@
 	Properties
 	{
 		_MainTex ("Texture", 2D) = "white" {}
-        _Magnitude ("Magnitude", Float) = 1
+		_Magnitude("Magnitude", Float) = 1
+		_Movement("Movement", Vector) = (0,0,0,0)
 	}
 	SubShader
 	{
@@ -43,6 +44,7 @@
             sampler2D_float _CameraDepthTexture;
 			float4 _MainTex_ST;
             float _Magnitude;
+			float2 _Movement;
 			
 			v2f vert (appdata v)
 			{
@@ -61,7 +63,8 @@
 			{
                 float sceneEyeDepth = DECODE_EYEDEPTH(tex2D(_CameraDepthTexture, i.projPos.xy / i.projPos.w));
                 float zCull = sceneEyeDepth > i.projPos.z;
-				float3 data = UnpackNormal(tex2D(_MainTex, i.uv)).xyz;
+				
+				float3 data = UnpackNormal(tex2D(_MainTex, i.uv + _Time.y * _Movement.xy)).xyz;
                 float scale = data.b * i.alpha * _Magnitude;
 				return data.rg * scale * zCull;
 			}

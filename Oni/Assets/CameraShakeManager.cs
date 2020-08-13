@@ -20,6 +20,8 @@ public class CameraShakeManager : MonoBehaviour
     float defaultRadius3;
     float defaultY;
 
+    public List<CameraShakeData> cameraShakeDataList = new List<CameraShakeData>();
+
     private void Awake()
     {
         if (Instance == null)
@@ -47,6 +49,22 @@ public class CameraShakeManager : MonoBehaviour
     {
         cinemachineBasic1.m_AmplitudeGain = Mathf.Clamp(cinemachineBasic1.m_AmplitudeGain - clamDownSpeed * Time.deltaTime, 0, 10);
         cinemachineBasic3.m_AmplitudeGain = cinemachineBasic2.m_AmplitudeGain = cinemachineBasic1.m_AmplitudeGain;
+
+        //指定時間的晃動
+        for(int i = 0; i < cameraShakeDataList.Count; i++)
+        {
+            if(Time.time >= cameraShakeDataList[i]._shakeTime)
+            {
+                AddCameraShake(cameraShakeDataList[i]._shakeStrength, cameraShakeDataList[i]._cameraImpulseIndex);
+                cameraShakeDataList.Remove(cameraShakeDataList[i]);
+            }
+        }
+    }
+
+    public void AddCameraShakeDataList(float _time, float strength, CameraImpulseIndex impulseIndex = CameraImpulseIndex.None)
+    {
+        CameraShakeData cameraShakeData = new CameraShakeData(_time, strength, impulseIndex);
+        cameraShakeDataList.Add(cameraShakeData);
     }
 
     public void AddCameraShake(float strength, CameraImpulseIndex impulseIndex = CameraImpulseIndex.None)
@@ -112,3 +130,18 @@ public class CameraShakeManager : MonoBehaviour
 }
 
 public enum CameraImpulseIndex { C1, C2, C3, J1, LockAtk1, GroundImpact, None};
+
+[System.Serializable]
+public class CameraShakeData
+{
+    public float _shakeTime;
+    public float _shakeStrength;
+    public CameraImpulseIndex _cameraImpulseIndex;
+
+    public CameraShakeData(float _time, float _strength, CameraImpulseIndex _index)
+    {
+        _shakeTime = _time;
+        _shakeStrength = _strength;
+        _cameraImpulseIndex = _index;
+    }
+}

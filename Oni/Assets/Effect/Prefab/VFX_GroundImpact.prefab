@@ -8542,7 +8542,7 @@ ParticleSystem:
   CollisionModule:
     enabled: 0
     serializedVersion: 3
-    type: 0
+    type: 1
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
@@ -8610,7 +8610,7 @@ ParticleSystem:
     m_Bounce:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -8718,7 +8718,7 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 1024
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
@@ -14647,6 +14647,8 @@ GameObject:
   - component: {fileID: 1542189483}
   - component: {fileID: 5690704611755195908}
   - component: {fileID: 3262437454624357945}
+  - component: {fileID: 1278723428}
+  - component: {fileID: 1278723427}
   m_Layer: 0
   m_Name: VFX_GroundImpact
   m_TagString: Untagged
@@ -14777,7 +14779,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d2ff3d65980e6542bb608fdcc04eba8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DestroyTime: 1
+  DestroyTime: 0.7
 --- !u!114 &3262437454624357945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14790,5 +14792,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee094cf1de82019428f5c0fa928e0bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShakeStrength: 1
+  ShakeStrength: 2
   cameraImpulseIndex: 5
+--- !u!135 &1278723428
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3458576647543133643}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1278723427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3458576647543133643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 058a5a4c3aaffe043b71057c9cc7200f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  status: {fileID: 0}
+  damageType: 0
+  damageTarget: 1
+  takeDamageTrigger: 1
+  takeInvincibleTime: 0
+  Force: {x: 0, y: 0, z: 0}
+  forceCenter: {fileID: 0}
+  hitEffectPrefab: {fileID: 0}
+  endEffectPrefab: {fileID: 0}
+  hitColor: {r: 16, g: 16, b: 16, a: 1}
+  useHitTimeScale: 0
+  startHitTimeScale: 0.1
+  hitTimeDuration: 0.1

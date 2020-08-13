@@ -347,6 +347,7 @@ public class Enemy : Damegeable
                 makeGroundImpact = false;
                 TakeDamege(GameManager.Instance.GroundDamage, DamageType.Physic, Vector3.up * GameManager.Instance.GroundBoundForce, true, false);         //落地傷害
                 Instantiate(GameManager.Instance.VFX_GroundImpactPrefab, groundCheck.position, Quaternion.identity); //落地特效
+                //CameraShakeManager.Instance.AddCameraShake(GameManager.Instance.GroundCameraShakeStrength, CameraImpulseIndex.None);
             }
 
             if(isGrounded && gravityY < 0)

@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public int GroundDamage = 5;
     public float GroundBoundForce = 3;
     public float GroundImpact_ForceTrashold = -4.0f;
+    public float GroundCameraShakeStrength = 1.0f;
     public GameObject VFX_ImpactHitPrefab;
     public GameObject VFX_GroundImpactPrefab;
 
