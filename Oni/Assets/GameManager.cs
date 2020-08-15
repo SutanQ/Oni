@@ -80,17 +80,24 @@ public class GameManager : MonoBehaviour
 
     public void SetTimeScale(float startScale, float endScale, float duration, bool witchTime = false)
     {
-        if (witchTime)
+        //Witch Time
+        if (witchTime && !inWitchTime)
         {
             inWitchTime = true;
-            if (witchTimeScaleCoroutine != null)
-                StopCoroutine(witchTimeScaleCoroutine);
+            //if (witchTimeScaleCoroutine != null)
+            //    StopCoroutine(witchTimeScaleCoroutine);
             witchTimeScaleCoroutine = StartCoroutine(DoVolume(0.0f, 1.0f, 0.25f, 0));
-        }
 
-        if (timeScaleCoroutine != null)
-            StopCoroutine(timeScaleCoroutine);
-        timeScaleCoroutine = StartCoroutine(DoTimeScale(startScale, endScale, duration, witchTime));
+            //if (timeScaleCoroutine != null)
+            //    StopCoroutine(timeScaleCoroutine);
+            timeScaleCoroutine = StartCoroutine(DoTimeScale(startScale, endScale, duration, true));
+        }
+        else
+        {
+            //if (timeScaleCoroutine != null)
+            //    StopCoroutine(timeScaleCoroutine);
+            timeScaleCoroutine = StartCoroutine(DoTimeScale(startScale, endScale, duration, false));
+        }
     }
 
     IEnumerator DoTimeScale(float startScale, float endScale, float duration, bool witchTime = false)

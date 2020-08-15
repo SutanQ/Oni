@@ -27,6 +27,7 @@ public class IDManager
     public static int Cskill_ID = Animator.StringToHash("Cskill");
     public static int Attack_ID = Animator.StringToHash("Attack");
     public static int Attacking_ID = Animator.StringToHash("Attacking");
+    public static int WitchTime_ID = Animator.StringToHash("WitchTime");
 
     //UI
     public static int FadeIn_ID = Animator.StringToHash("FadeIn");

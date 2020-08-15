@@ -66,6 +66,7 @@ public class AttackStateMachine : StateMachineBehaviour
         specialAttack = 0;
         animator.SetInteger(IDManager.Cskill_ID, 0);
         animator.SetBool(IDManager.Attacking_ID, true);
+        animator.SetInteger(IDManager.Attack_ID, thisAttackIndex);
         characterController = animator.GetComponent<CharacterController>();
         thirdPerson = animator.GetComponent<ThirdPersonMovement>();
 
