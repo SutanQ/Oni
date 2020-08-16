@@ -36,6 +36,11 @@ public class ThirdPersonMovement : MonoBehaviour
     [Header("Material")]
     public Material bodyMaterial;
 
+    [Header("Hit Materials")]
+    [ColorUsage(true, true)]
+    public Color hitColor = new Color(16, 16, 16, 1);
+    public Material[] hitMaterials;
+
     [Header("Camera")]
     [Range(0f, 10f)] public float LookSpeed = 1f;
     public bool InvertY = false;
@@ -452,10 +457,14 @@ public class ThirdPersonMovement : MonoBehaviour
         }
     }
 
-    public void StartLock()
+    public void StartLock(Transform _target = null)
     {
         anim.SetBool(IDManager.Lock_ID, true);
-        lockTarget = EnemyManager.Instance.GetClostEnemy(transform.position, lockRange, lockAngle, cam.position, cam.forward);
+        if(_target == null)
+            lockTarget = GetClostEnemy();
+        else
+            lockTarget = _target;
+
         if (lockTarget != null)
         {
             lockTarget.GetComponent<Damegeable>().OnDeath += Do_TargetUI_FadeOut;
@@ -465,6 +474,16 @@ public class ThirdPersonMovement : MonoBehaviour
             targetAim.transform.position = Camera.main.WorldToScreenPoint(lockTarget.position + (Vector3)TargetUI_Offset);
             Do_TargetUI_FadeIn();
         }
+    }
+
+    public Transform GetClostEnemy()
+    {
+        return EnemyManager.Instance.GetClostEnemy(transform.position, lockRange, lockAngle, cam.position, cam.forward);
+    }
+
+    public Transform GetClostEnemyWithoutFlash()
+    {
+        return EnemyManager.Instance.GetClostEnemyWithoutFlash(transform.position, lockRange, lockAngle, cam.position, cam.forward);
     }
 
     public void CancelLock()
@@ -1073,6 +1092,70 @@ public class ThirdPersonMovement : MonoBehaviour
             return lockTarget;
         else
             return null;
+    }
+
+    public void SetDetectCollisions(int b)
+    {
+        if(b > 0)
+            characterController.detectCollisions = true; 
+        else
+            characterController.detectCollisions = false;
+    }
+
+    public void SetHitMaterial(float duration)
+    {
+        for(int i = 0; i < hitMaterials.Length; i++)
+        {
+            hitMaterials[i].SetColor(IDManager.hitColorID, hitColor);
+        }
+
+        StartCoroutine(DoHitColorAmount(duration));
+    }
+
+    IEnumerator DoHitColorAmount(float duration)
+    {
+        float t = 0;
+        float durationBy2 = duration * 0.5f;
+        for (int i = 0; i < hitMaterials.Length; i++)
+        {
+            hitMaterials[i].SetFloat(IDManager.hitColorAmountID, 0.0f);
+        }
+        
+        while (t < durationBy2)
+        {
+            for (int i = 0; i < hitMaterials.Length; i++)
+            {
+                hitMaterials[i].SetFloat(IDManager.hitColorAmountID, Mathf.Lerp(0.0f, 1.0f, t / durationBy2));
+            }
+            
+            t += Time.deltaTime;
+            yield return null;
+        }
+        for (int i = 0; i < hitMaterials.Length; i++)
+        {
+            hitMaterials[i].SetFloat(IDManager.hitColorAmountID, 1.0f);
+        }
+        
+        t = 0;
+        while (t < durationBy2)
+        {
+            for (int i = 0; i < hitMaterials.Length; i++)
+            {
+                hitMaterials[i].SetFloat(IDManager.hitColorAmountID, Mathf.Lerp(1.0f, 0.0f, t / durationBy2));
+            }
+            
+            t += Time.deltaTime;
+            yield return null;
+        }
+        for (int i = 0; i < hitMaterials.Length; i++)
+        {
+            hitMaterials[i].SetFloat(IDManager.hitColorAmountID, 0.0f);
+        }
+    }
+
+    public void SetHitColor(Color color)
+    {
+        hitColor = color;
     }
 }
 

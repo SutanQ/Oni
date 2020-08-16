@@ -115,6 +115,7 @@ public class GameManager : MonoBehaviour
         }
 
         Time.timeScale = endScale;
+
         if (witchTime)
         {
             inWitchTime = false;
@@ -141,6 +142,12 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
         volumes[index].weight = endWeight;
+    }
+
+    public void StopTimeScaleCoroutine()
+    {
+        if(timeScaleCoroutine != null)
+            StopCoroutine(timeScaleCoroutine);
     }
 }
 

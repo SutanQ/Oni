@@ -16,6 +16,7 @@ public class ResetStateMachine : StateMachineBehaviour
         animator.ResetTrigger(IDManager.dodgeForward_ID);
         animator.ResetTrigger(IDManager.dodgeBack_ID);
         animator.ResetTrigger(IDManager.dodgeSide_ID);
+        animator.SetBool(IDManager.Flashing_ID, false);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

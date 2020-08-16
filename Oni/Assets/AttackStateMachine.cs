@@ -13,6 +13,13 @@ public class AttackStateMachine : StateMachineBehaviour
     public bool cancelLockWhenEnter = false;
     public bool cancelLockWhenExit = false;
 
+    [Header("Hit Material")]
+    public bool useHitMaterial = false;
+    public float hitMaterialDuration = 0.5f;
+    public bool useHitColor = false;
+    [ColorUsage(true, true)]
+    public Color hitColor = new Color(16, 16, 16, 1);
+
     [Header("Movement")]
     public bool useLockTargetDirection = false;
     public Vector3 XYZ_Length;
@@ -138,6 +145,13 @@ public class AttackStateMachine : StateMachineBehaviour
         if(useVolume)
         {
             GameManager.Instance.PlayVolume(0.0f, 1.0f, volumeFadeInDuration, volumeIndex);
+        }
+
+        if (useHitMaterial)
+        {
+            if (useHitColor)
+                thirdPerson.SetHitColor(hitColor);
+            thirdPerson.SetHitMaterial(hitMaterialDuration);
         }
 
     }

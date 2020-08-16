@@ -20,7 +20,9 @@ public class CameraShakeManager : MonoBehaviour
     float defaultRadius3;
     float defaultY;
 
-    public List<CameraShakeData> cameraShakeDataList = new List<CameraShakeData>();
+    private List<CameraShakeData> cameraShakeDataList = new List<CameraShakeData>();
+
+    int UseTimeScale = 1;
 
     private void Awake()
     {
@@ -47,7 +49,7 @@ public class CameraShakeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        cinemachineBasic1.m_AmplitudeGain = Mathf.Clamp(cinemachineBasic1.m_AmplitudeGain - clamDownSpeed * Time.deltaTime, 0, 10);
+        cinemachineBasic1.m_AmplitudeGain = Mathf.Clamp(cinemachineBasic1.m_AmplitudeGain - clamDownSpeed * (Time.deltaTime * UseTimeScale + Time.unscaledDeltaTime *(1 - UseTimeScale)), 0, 10);
         cinemachineBasic3.m_AmplitudeGain = cinemachineBasic2.m_AmplitudeGain = cinemachineBasic1.m_AmplitudeGain;
 
         //指定時間的晃動
@@ -126,7 +128,13 @@ public class CameraShakeManager : MonoBehaviour
         cinemachineFree.m_Orbits[2].m_Radius = r3;
     }
 
-
+    public void SetTimeScaleType(bool b)
+    {
+        if (b)
+            UseTimeScale = 1;
+        else
+            UseTimeScale = 0;
+    }
 }
 
 public enum CameraImpulseIndex { C1, C2, C3, J1, LockAtk1, GroundImpact, None};

@@ -28,6 +28,8 @@ public class IDManager
     public static int Attack_ID = Animator.StringToHash("Attack");
     public static int Attacking_ID = Animator.StringToHash("Attacking");
     public static int WitchTime_ID = Animator.StringToHash("WitchTime");
+    public static int Flashing_ID = Animator.StringToHash("Flashing");
+    public static int FlashEndTrigger_ID = Animator.StringToHash("FlashEndTrigger");
 
     //UI
     public static int FadeIn_ID = Animator.StringToHash("FadeIn");

@@ -23,7 +23,7 @@ Material:
   m_Name: maina_hair_ribbon
   m_Shader: {fileID: -6465566751694194690, guid: bb029d7aa5910df4db83998b272c2052,
     type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: BOOLEAN_85462CC0_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -119,12 +119,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - BOOLEAN_6BA73990: 0
-    - BOOLEAN_85462CC0: 0
+    - BOOLEAN_85462CC0: 1
     - BOOLEAN_A9457EB: 0
     - BOOLEAN_C19FCA5F: 0
     - BOOLEAN_ED32EB6C: 0
     - Boolean_5049CDBB: 0
     - Vector1_23DF1EC2: 8.5
+    - Vector1_3286D1FC: 1
     - Vector1_32A36A6E: 0.8
     - Vector1_346F1C8A: 0.5
     - Vector1_38E09E78: 0
@@ -188,6 +189,7 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 0.5990566, b: 0.5990566, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _HitColor: {r: 1, g: 1, b: 1, a: 1}
+    - _HitColor: {r: 53.401962, g: 111.566345, b: 185.59373, a: 1}
     - _HitPos: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+  m_BuildTextureStacks: []

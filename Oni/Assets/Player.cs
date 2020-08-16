@@ -28,6 +28,8 @@ public class Player : Damegeable
 
     public override void TakeDamege(int dmg, DamageType damageType, Vector3 force, bool takeDamageTrigger, bool takeInvincibleTime = true)
     {
+        if (anim.GetBool(IDManager.Flashing_ID)) return;
+
         base.TakeDamege(dmg, damageType, force, takeDamageTrigger, takeInvincibleTime);
         //UpdateUI();
     }

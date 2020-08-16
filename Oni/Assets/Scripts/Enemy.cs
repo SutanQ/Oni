@@ -598,6 +598,11 @@ public class Enemy : Damegeable
         base.AnimatorAction();
         walkStraight = false;
     }
+
+    public void SetFlash(bool b)
+    {
+        anim.SetBool(IDManager.Flashing_ID, b);
+    }
 }
 
 [System.Serializable]

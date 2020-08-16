@@ -66,4 +66,34 @@ public class EnemyManager : MonoBehaviour
         }
         return target;
     }
+
+    public Transform GetClostEnemyWithoutFlash(Vector3 playerPos, float lockRange, float lockAngle, Vector3 camPos, Vector3 camDir)
+    {
+        if (enemies.Count == 0)
+            return null;
+
+        Transform target = null;
+
+        float minLength = 9999;
+        for (int i = 0; i < enemies.Count; i++)
+        {
+            float d = Vector3.Distance(playerPos, enemies[i].transform.position);
+            if (d < minLength && d < lockRange)
+            {
+                //Vector3 dirr = (enemies[i].transform.position - camPos).normalized;
+                //float angle = Mathf.Acos(Vector3.Dot(dirr, camDir) / (dirr.sqrMagnitude * camDir.sqrMagnitude)) * 180 / Mathf.PI;
+
+                //if (Mathf.Abs(angle) <= lockAngle * 0.5f)
+                //{
+
+                if (enemies[i].GetComponent<Animator>().GetBool(IDManager.Flashing_ID) == false)
+                {
+                    minLength = d;
+                    target = enemies[i].transform;
+                }
+                //}
+            }
+        }
+        return target;
+    }
 }
