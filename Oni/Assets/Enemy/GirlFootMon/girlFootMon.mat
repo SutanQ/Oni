@@ -10,7 +10,7 @@ Material:
   m_Name: girlFootMon
   m_Shader: {fileID: -6465566751694194690, guid: bb029d7aa5910df4db83998b272c2052,
     type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: BOOLEAN_85462CC0_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -130,12 +130,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - BOOLEAN_6BA73990: 0
-    - BOOLEAN_85462CC0: 0
+    - BOOLEAN_85462CC0: 1
     - BOOLEAN_A9457EB: 0
     - BOOLEAN_C19FCA5F: 0
     - BOOLEAN_ED32EB6C: 0
     - Boolean_5049CDBB: 0
     - Vector1_23DF1EC2: 32
+    - Vector1_3286D1FC: 1
     - Vector1_32A36A6E: 0.6
     - Vector1_346F1C8A: 0.5
     - Vector1_38E09E78: 0
@@ -209,3 +210,4 @@ Material:
     - _LightSmoothVector: {r: 0.29, g: 0.3, b: 0, a: 0}
     - _OutlineColor: {r: 0, g: 1, b: 0.41008663, a: 1}
     - _Specular: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []

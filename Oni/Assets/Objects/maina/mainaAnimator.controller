@@ -1349,7 +1349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponIndex: 11
   fadeIn: 0.05
-  fadeOut: 0.15
+  fadeOut: 0.3
 --- !u!1102 &-5621021325967244889
 AnimatorState:
   serializedVersion: 5
@@ -3838,6 +3838,12 @@ AnimatorController:
     m_Controller: {fileID: 9100000}
   - m_Name: FlashEndTrigger
     m_Type: 9
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
+  - m_Name: InFlash
+    m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0

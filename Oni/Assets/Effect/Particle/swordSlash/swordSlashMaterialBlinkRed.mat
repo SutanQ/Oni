@@ -21,8 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: swordSlashMaterialBlinkRed
-  m_Shader: {fileID: -6465566751694194690, guid: 0527719ba216f964a9ee950c6c68182c,
-    type: 3}
+  m_Shader: {fileID: 4800000, guid: 5775933d0cf318e43b593370b94123a0, type: 3}
   m_ShaderKeywords: BOOLEAN_CA9D1AC6_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -140,3 +139,4 @@ Material:
     - _Color: {r: 1, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+  m_BuildTextureStacks: []

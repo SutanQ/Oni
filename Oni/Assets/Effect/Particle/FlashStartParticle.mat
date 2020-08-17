@@ -21,13 +21,12 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: FlashStartParticle
-  m_Shader: {fileID: -6465566751694194690, guid: a6cc95e567c5754489cdce79322cc580,
-    type: 3}
+  m_Shader: {fileID: 4800000, guid: 3b69f4a55d420574ab49aa009c147a03, type: 3}
   m_ShaderKeywords: BOOLEAN_15B78E78_ON BOOLEAN_CA9D1AC6_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 3015
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:

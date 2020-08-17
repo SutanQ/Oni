@@ -91,7 +91,7 @@ public class GhostEffect : MonoBehaviour
     }
 
     //播放/產生幻影
-    private void Plays()
+    public void Plays()
     {
         //因為物件可能會再重新合併Mesh，所以在一開始執行前會先再重新更新Mesh的資料，以免出錯
         if(isFirst)
@@ -282,5 +282,4 @@ public class ObjPool
         pool[name].RemoveAt(0);
         return o;
     }
-
 }
