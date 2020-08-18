@@ -32,7 +32,7 @@ public class FPS_Display : MonoBehaviour
         {
             //frame = (1f / Time.unscaledDeltaTime);
             frame = frame_cnt / totalTime;
-            fps_text.text = Screen.width + "x" + Screen.height + "\nFPS:" + frame.ToString();
+            fps_text.text = Screen.width + "x" + Screen.height + "\nFPS:" + frame.ToString() + "\nTs:" + Time.timeScale;
             nextTime = Time.time + updateSrecond;
             totalTime = 0;
             frame_cnt = 0;

@@ -35,6 +35,8 @@ public class EnemyManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.Instance.gameState != GameState.GamePlaying) return;
+
         for(int i = 0; i < enemies.Count; i++)
         {
             enemies[i].UpdateAction();

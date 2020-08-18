@@ -126,18 +126,20 @@ public class FlashCollider : MonoBehaviour
     {
         CameraShakeManager.Instance.SetTimeScaleType(true);
         //恢復碰撞
-        Physics.IgnoreLayerCollision(0, 9, false);  //不忽略Layer0與Layer9的碰撞
-        Physics.IgnoreLayerCollision(9, 10, false);  //不忽略Layer9與Layer10的碰撞
-        characterController.detectCollisions = true; //此CharacterController會被其他的物體碰撞
+        //Physics.IgnoreLayerCollision(0, 9, false);  //不忽略Layer0與Layer9的碰撞
+        //Physics.IgnoreLayerCollision(9, 10, false);  //不忽略Layer9與Layer10的碰撞
+        //characterController.detectCollisions = true; //此CharacterController會被其他的物體碰撞
 
         //ghostEffect.material.color = materialColor; //恢復殘影原始顏色
-        if (FlashManager.Instance.FlashCount >= FlashManager.Instance.TimelineCount)
+        if (FlashManager.Instance.DoFlashTimeline)
             FlashManager.Instance.FlashFinishDirector();
         else
             FlashManager.Instance.FlashFinish();
         GameManager.Instance.PlayVolume(1.0f, 0.0f, 0.2f, 3);
         //anim.SetBool(IDManager.Flashing_ID, false);
-
+        //thirdPerson.SetPlayerCanMove(true);
+        
+        //thirdPerson.Weapon_FadeOut(0.3f, 11, 0);
         triggetCount = 0;
     }
 }

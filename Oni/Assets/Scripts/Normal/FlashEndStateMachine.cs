@@ -11,6 +11,8 @@ public class FlashEndStateMachine : StateMachineBehaviour
     public float fadeIn = 0.05f;
     public float fadeOut = 0.15f;
 
+    bool done = false;
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -25,6 +27,15 @@ public class FlashEndStateMachine : StateMachineBehaviour
 
         GameManager.Instance.StopTimeScaleCoroutine();
         GameManager.Instance.SetTimeScale(Time.timeScale, 1.0f, stateInfo.length, false);
+
+        done = false;
+        if(FlashManager.Instance.DoFlashTimeline)
+        {
+            done = true;
+            flashCollider.EndFlash();
+            //thirdPerson.Weapon_FadeOut(fadeOut, weaponIndex, 0);
+            //thirdPerson.SetPlayerCanMove(true);
+        }
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -36,9 +47,12 @@ public class FlashEndStateMachine : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        flashCollider.EndFlash();
-        thirdPerson.Weapon_FadeOut(fadeOut, weaponIndex, 0);
-        thirdPerson.SetPlayerCanMove(true);
+        if (!done)
+        {
+            flashCollider.EndFlash();
+            thirdPerson.Weapon_FadeOut(fadeOut, weaponIndex, 0);
+            thirdPerson.SetPlayerCanMove(true);
+        }
         //Time.timeScale = 1.0f;
     }
 

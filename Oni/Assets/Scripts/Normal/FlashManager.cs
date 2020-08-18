@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Playables;
+using Cinemachine;
 
 public class FlashManager : MonoBehaviour
 {
+    
     public static FlashManager Instance;
 
     [Header("Status")]
+    public ThirdPersonMovement thirdPerson;
+    public CharacterController characterController;
     public Damegeable playerStatus;
     public int FlashCount = 0;
     public int FlashBaseAttack = 50;
@@ -19,6 +23,14 @@ public class FlashManager : MonoBehaviour
                 return FlashBaseAttack + playerStatus.status.atk;
             else
                 return FlashBaseAttack;
+        }
+    }
+
+    public bool DoFlashTimeline
+    {
+        get
+        {
+            return FlashManager.Instance.FlashCount >= FlashManager.Instance.TimelineCount;
         }
     }
 
@@ -52,6 +64,8 @@ public class FlashManager : MonoBehaviour
     [Header("Timeline")]
     public int TimelineCount = 3;
     public PlayableDirector timeline;
+    public CinemachineTargetGroup cinemachineTarget;
+    public Transform playerTarget;
 
     [Header("Other")]
     public float hitMaterialDuration = 0.15f;
@@ -67,8 +81,6 @@ public class FlashManager : MonoBehaviour
             Instance = this;
         else
             Destroy(this);
-
-        
     }
 
     private void Start()
@@ -80,10 +92,14 @@ public class FlashManager : MonoBehaviour
         UI_FlashCount.text = FlashCount.ToString();
         UI_FlashDmg.color = Color.clear;
         UI_FlashDmg.text = FlashCount.ToString();
+
+        cinemachineTarget.AddMember(playerTarget, 1.0f, 0.0f);
     }
 
     public void AddFlashList(Enemy enemy, Transform hitTransform)
     {
+        cinemachineTarget.AddMember(enemy.transform, 0.2f, 0.0f);
+
         //Debug.Log("Add List " + enemy.name);
         flashEnemies.Add(enemy);
         FlashCount++;
@@ -130,6 +146,8 @@ public class FlashManager : MonoBehaviour
             //flashEnemies[i].hitMaterial.SetVector(IDManager.hitPosID, new Vector4(objectPos.x, objectPos.y, objectPos.z, 0.0f)); //擊中的部位座標(object position)
             //flashEnemies[i].hitMaterial.SetFloat(IDManager.hitStrengthID, 0.15f);  //擊中抖動的Strength
             flashEnemies[i].PlayHitColorAmount(0.8f);   //擊中發光的特效顯示時間
+
+            cinemachineTarget.RemoveMember(flashEnemies[i].transform);
         }
 
         flashEnemies.Clear();
@@ -139,6 +157,14 @@ public class FlashManager : MonoBehaviour
         UI_FlashCount.text = FlashCount.ToString();
         UI_FlashDmg.color = Color.clear;
         UI_FlashDmg.text = FlashCount.ToString();
+
+        thirdPerson.SetPlayerCanMove(true);
+        thirdPerson.Weapon_FadeOut(0.3f, 11, 0);
+
+        //恢復碰撞
+        Physics.IgnoreLayerCollision(0, 9, false);  //不忽略Layer0與Layer9的碰撞
+        Physics.IgnoreLayerCollision(9, 10, false);  //不忽略Layer9與Layer10的碰撞
+        characterController.detectCollisions = true; //此CharacterController會被其他的物體碰撞
     }
 
     public void DestroyList()
@@ -164,6 +190,11 @@ public class FlashManager : MonoBehaviour
         }
 
         return c;
+    }
+
+    public void TargetUI_Cancel()
+    {
+        thirdPerson.TargetUI_Cancel();
     }
 }
 

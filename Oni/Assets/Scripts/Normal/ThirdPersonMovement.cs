@@ -92,6 +92,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
     SkinnedMeshRenderer[] skinnedMeshRenderers;
     SobelEffect[] sobelEffects;
+    Coroutine targetUI_Coroutine;
 
     // Start is called before the first frame update
     void Start()
@@ -648,14 +649,20 @@ public class ThirdPersonMovement : MonoBehaviour
         }
     }
 
+    
+
     public void Do_TargetUI_FadeIn()
     {
-        StartCoroutine(TargetUI_FadeIn(0.2f, 90.0f));
+        if (targetUI_Coroutine != null)
+            StopCoroutine(targetUI_Coroutine);
+        targetUI_Coroutine = StartCoroutine(TargetUI_FadeIn(0.2f, 90.0f));
     }
 
     public void Do_TargetUI_FadeOut()
     {
-        StartCoroutine(TargetUI_FadeOut(0.2f, 90.0f));
+        if (targetUI_Coroutine != null)
+            StopCoroutine(targetUI_Coroutine);
+        targetUI_Coroutine = StartCoroutine(TargetUI_FadeOut(0.2f, 90.0f));
     }
 
     IEnumerator TargetUI_FadeIn(float t, float rotateAngle)
@@ -694,6 +701,16 @@ public class ThirdPersonMovement : MonoBehaviour
             tt += Time.deltaTime;
             yield return null;
         }
+        targetAim.transform.localScale = new Vector3(2, 2, 2);
+        targetAim.transform.eulerAngles = targetEularAngles;
+        targetLockAim.color = targetAim.color = Color.clear;
+    }
+
+    public void TargetUI_Cancel()
+    {
+        if (targetUI_Coroutine != null)
+            StopCoroutine(targetUI_Coroutine);
+        Vector3 targetEularAngles = targetAim.transform.eulerAngles + Vector3.forward * 90.0f;
         targetAim.transform.localScale = new Vector3(2, 2, 2);
         targetAim.transform.eulerAngles = targetEularAngles;
         targetLockAim.color = targetAim.color = Color.clear;

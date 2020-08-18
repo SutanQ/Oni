@@ -6,7 +6,7 @@ using UnityEngine.Rendering;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    GameState gameState;
+    public GameState gameState;
 
     Coroutine timeScaleCoroutine;
     Coroutine witchTimeScaleCoroutine;
@@ -152,8 +152,21 @@ public class GameManager : MonoBehaviour
 
     public void SetTimeScale(float scale)
     {
+        if (timeScaleCoroutine != null)
+            StopCoroutine(timeScaleCoroutine);
         Time.timeScale = scale;
+    }
+
+    public void SetGameState(int index)
+    {
+        switch(index)
+        {
+            case (int)GameState.GamePlaying: gameState = GameState.GamePlaying; break;
+            case (int)GameState.GamePause: gameState = GameState.GamePause; break;
+            case (int)GameState.GameFlash: gameState = GameState.GameFlash; break;
+            default: gameState = GameState.GamePlaying; break;
+        }
     }
 }
 
-public enum GameState { GamePlaying, GamePause};
+public enum GameState { GamePlaying, GamePause, GameFlash};
