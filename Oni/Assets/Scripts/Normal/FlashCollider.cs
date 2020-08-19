@@ -14,6 +14,8 @@ public class FlashCollider : MonoBehaviour
     Color materialColor; //暫存殘影原始顏色
     int triggetCount = 0;
 
+    public GameObject[] flashParticles;
+
     private void Start()
     {
         anim = thirdPerson.GetComponent<Animator>();
@@ -107,6 +109,8 @@ public class FlashCollider : MonoBehaviour
 
         if (target == null)
         {
+            //FlashManager.Instance.TargetUI_Cancel();
+            //CancelLock();
             anim.SetTrigger(IDManager.FlashEndTrigger_ID);
             //EndFlash();
         }
@@ -131,7 +135,7 @@ public class FlashCollider : MonoBehaviour
         //characterController.detectCollisions = true; //此CharacterController會被其他的物體碰撞
 
         //ghostEffect.material.color = materialColor; //恢復殘影原始顏色
-        if (FlashManager.Instance.DoFlashTimeline)
+        if (FlashManager.Instance.DoFlashTimeline && target == null)
             FlashManager.Instance.FlashFinishDirector();
         else
             FlashManager.Instance.FlashFinish();
@@ -141,5 +145,8 @@ public class FlashCollider : MonoBehaviour
         
         //thirdPerson.Weapon_FadeOut(0.3f, 11, 0);
         triggetCount = 0;
+
+        for (int i = 0; i < flashParticles.Length; i++)
+            flashParticles[i].SetActive(false);
     }
 }

@@ -160,6 +160,7 @@ public class FlashManager : MonoBehaviour
 
         thirdPerson.SetPlayerCanMove(true);
         thirdPerson.Weapon_FadeOut(0.3f, 11, 0);
+        thirdPerson.TargetUI_Cancel();
 
         //恢復碰撞
         Physics.IgnoreLayerCollision(0, 9, false);  //不忽略Layer0與Layer9的碰撞
