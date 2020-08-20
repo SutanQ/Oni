@@ -7,10 +7,12 @@ using UnityEngine.UI;
 public class Enemy : Damegeable
 {
     protected Transform playerGO;
+    [Header("System")]
+    [Tooltip("是否統一使用EnemyManager來控制UpdateAction")]
     public bool useEnemyManager = false;
     protected Player player;
-    
-    
+
+    [Tooltip("是否啟用重力")]
     public bool useGravity = true;
     //protected Rigidbody rb;
     
@@ -19,14 +21,23 @@ public class Enemy : Damegeable
 
 
     [Header("Move and Search")]
+    [Tooltip("移動速度")]
     public float MoveSpeed = 2.0f;
+    [Tooltip("正面面向的偏移值")]
     public float forward_offsetAngle = 0.0f;
+    [Tooltip("搜索玩家的範圍")]
     public float searchRange = 3.0f;
+    [Tooltip("搜索玩家的角度大小")]
     public float searchAngle = 90.0f;
+    [Tooltip("搜索到玩家之後，會持續跟隨的距離範圍")]
     public float trackRange = 5.0f;
+    [Tooltip("攻擊距離，與玩家的距離低於此值就會進行攻擊")]
     public float attackRange = 1.5f;
+    [Tooltip("到達目的地的距離，與目標的距離低於此值才會變換到下一個目標")]
     public float reachRange = 0.2f;
+    [Tooltip("搜索玩家的間隔時間(秒)")]
     public float searchDurationTime = 3.0f;
+    [Tooltip("攻擊動作的間隔時間(秒)")]
     public float actionDurationTime = 2.0f;
     float searchOldTime, actionOldTime;
     protected bool hasTarget = false;
@@ -34,42 +45,58 @@ public class Enemy : Damegeable
     float animationCurveSpeed = 1.0f;
 
     [Header("Ground")]
+    [Tooltip("判定著地的目標物")]
     public Transform groundCheck;
+    [Tooltip("判定著地的範圍")]
     public float groundCheckDistance = 0.1f;
+    [Tooltip("判定著地的Layer")]
     public LayerMask groundMask;
     
 
     [Header("Idle Walk Path")]
+    [Tooltip("是否筆直往正面面向方向前進，而不理目標物")]
     public bool walkStraight = false;
+    [Tooltip("閒晃的路徑")]
     public IdlePath idleWalkPath;
-    public bool directionForward = true;
+    bool directionForward = true;
+    [Tooltip("閒晃路徑是否初始目標及結尾目標成一個Cycle")]
     public bool cycle = false;
     float pointNextTime = 0;
+    [Tooltip("到達目標時的等待時間(秒)")]
     public float endPointWaitTime = 1.5f;
     int pointIndex = 0;
     Transform nextPoint;
 
     [Header("Jump")]
     public bool hasJumpAction = false;
+    [Tooltip("在Attack及Jump兩個動作中選擇Jump的機率")]
     public float jumpPercent = 0.3f;
     //public float jumpForce = 300.0f;
+    [Tooltip("跳躍的高度")]
     public float jumpHeight = 2.5f;
 
     [Header("Actions Setting")]
+    [Tooltip("Attack動作中會被替換的Action")]
     public AnimationClip replaceAttackClip;
+    [Tooltip("替換的Action組合")]
     public AttackAnimationSet[] attackAnimationSets;
     protected AnimatorOverrideController overrideController;
 
     [Header("Enemy Effect")]
+    [Tooltip("殘影特效")]
     public GhostEffect ghostEffect;
+    [Tooltip("怪物特效(粒子、音效等)")]
     public EnemyEffect[] enemyEffects;
     protected Dictionary<string, EnemyEffect> enemyEffectsDictionary = new Dictionary<string, EnemyEffect>();
     protected string nowEnemyEffectName;
     protected string nowEnemyAudioName;
 
     [Header("UI")]
+    [Tooltip("血量UI(Root)")]
     public GameObject UI_HP;
+    [Tooltip("血量UI(深紅血)")]
     public Image UI_HPbar;
+    [Tooltip("血量UI(綠血)")]
     public Image UI_HPgreen;
     Animator UI_Anim;
 
@@ -113,6 +140,13 @@ public class Enemy : Damegeable
             OnDamege += CloseGhostEffect;
 
         OnDamege += OnDamegeSetHasTarget;
+    }
+
+    public override void TakeDamege(int dmg, DamageType damageType, Vector3 force, bool takeDamageTrigger, bool takeInvincibleTime = true)
+    {
+        if (dmg > GameManager.Instance.EnemyTakeDmgMotorThreshold)
+            GameManager.Instance.EnemyTakeDamageMotor(dmg);
+        base.TakeDamege(dmg, damageType, force, takeDamageTrigger, takeInvincibleTime);
     }
 
     public void OnDamegeSetHasTarget()
@@ -622,12 +656,20 @@ public class AttackAnimationSet
 [System.Serializable]
 public class EnemyEffect
 {
+    [Tooltip("特效名稱")]
     public string enemyEffectName;
+    [Tooltip("粒子特效")]
     public ParticleSystem[] particleSystems;
+    [Tooltip("音效")]
     public AudioSource audioSource;
+    [Tooltip("音效大小")]
     public float audioVolume = 1.0f;
+    [Tooltip("音效持續時間")]
     public float audioSourceLeaveTime = 0.3f;
+    [Tooltip("動作是否筆直前進")]
     public int straight = 0;
+    [Tooltip("動作的時間")]
     public float animationCurveDurationTime = 1.0f;
+    [Tooltip("動作的曲線")]
     public AnimationCurve animationCurve;
 }

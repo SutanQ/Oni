@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class Damegeable : MonoBehaviour
 {
+    [Tooltip("角色的能力")]
     public Status status;
+    [Tooltip("受到攻擊的音效")]
     public AudioClip damageClip;
+    [Tooltip("走路的音效")]
     public AudioClip walkClip;
+    [Tooltip("跳躍的音效")]
     public AudioClip jumpClip;
     public event System.Action OnDeath;
     public event System.Action OnDamege;
@@ -16,18 +20,23 @@ public class Damegeable : MonoBehaviour
     protected Rigidbody rb;
     protected CharacterController characterController;
     protected float gravityY;
+    [Tooltip("阻力，影響AddForceVity歸零的程度")]
     public float drag = 0.5f;
+    [Tooltip("額外影響角色位移的速度")]
     public Vector3 addForceVity;
     //    Coroutine coroutine;
     bool doTimer = false;
     float takeInvincibleTimer;
+    [Tooltip("落地時是否會產生衝擊波")]
     public bool makeGroundImpact = false;
 
     [Header("Hit Materials")]
+    [Tooltip("是否啟用在受到攻擊時產生閃光的特效(需將Material的UseHitPos打開)")]
     public bool UseHitMaterial = false;
+    [Tooltip("被擊中閃光特效的Renderer")]
     public Renderer hitRenderer;
-    public Transform hitTransform;
-    public Material hitMaterial;
+    [HideInInspector]public Transform hitTransform;
+    [HideInInspector]public Material hitMaterial;
     
     Coroutine hitCoroutine;
     protected float UI_Timer;
@@ -275,18 +284,31 @@ public class Damegeable : MonoBehaviour
 [System.Serializable]
 public class Status
 {
+    [Tooltip("現在血量")]
     public int hp = 1;
+    [Tooltip("最大血量")]
     public int maxHp = 10;
+    [Tooltip("物理攻擊力")]
     public int atk = 1;
+    [Tooltip("魔法攻擊力")]
     public int matk = 0;
+    [Tooltip("物理防禦力")]
     public int def = 0;
+    [Tooltip("魔法防禦力")]
     public int mdef = 0;
+    [Tooltip("經驗值")]
     public int exp = 0;
+    [Tooltip("是否會受到攻擊")]
     public bool canTakeDamage = true;    //是否會受到攻擊
+    [Tooltip("受到攻擊後的無敵持續時間(秒)")]
     public float InvincibleTime = 0.5f;  //無敵持續時間
+    [Tooltip("死掉到消失的間隔時間(秒)")]
     public float deadTime = 4.0f;        //死掉到消失的間隔時間
+    [Tooltip("是否為霸體")]
     public bool superArmor = false;      //霸體
+    [Tooltip("是否能移動")]
     public bool canMove = true;
+    [Tooltip("是否已經死亡")]
     public bool isDead = false;
 }
 

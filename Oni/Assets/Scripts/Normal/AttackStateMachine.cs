@@ -8,61 +8,94 @@ public class AttackStateMachine : StateMachineBehaviour
 
     CharacterController characterController;
     ThirdPersonMovement thirdPerson;
+    [Tooltip("是否忽略角色碰撞")]
     public bool NoCollision = false;
+    [Tooltip("角色是否有霸體(受到傷害時不會觸發damage動作)")]
     public bool superArmor = false;
+    [Tooltip("是否在進入動作時取消Lock敵人")]
     public bool cancelLockWhenEnter = false;
+    [Tooltip("是否在離開動作時取消Lock敵人")]
     public bool cancelLockWhenExit = false;
 
     [Header("Hit Material")]
+    [Tooltip("是否在擊中敵人時產生發光特效")]
     public bool useHitMaterial = false;
+    [Tooltip("發光特效的持續時間")]
     public float hitMaterialDuration = 0.5f;
+    [Tooltip("是否使用設定的發光特效顏色")]
     public bool useHitColor = false;
+    [Tooltip("設定發光特效的顏色")]
     [ColorUsage(true, true)]
     public Color hitColor = new Color(16, 16, 16, 1);
 
     [Header("Movement")]
+    [Tooltip("攻擊是否會自動追尾敵人")]
     public bool useLockTargetDirection = false;
+    [Tooltip("攻擊的位移")]
     public Vector3 XYZ_Length;
+    [Tooltip("攻擊位移的倍率")]
     public float lengthMultiplier = 1.0f;
+    [Tooltip("攻擊位移的X曲線")]
     public AnimationCurve animationCurveX;
+    [Tooltip("攻擊位移的Y曲線")]
     public AnimationCurve animationCurveY;
+    [Tooltip("攻擊位移的Z曲線")]
     public AnimationCurve animationCurveZ;
     Vector3 targetDirection;
     Transform lockTarget;
     Vector3 dir;
 
     [Header("Animation Transhold")]
+    [Tooltip("攻擊Index，對應ThirdPersonMovement中weapon_Attack_Groups的index")]
     public int thisAttackIndex = 1;
+    [Tooltip("接收下一段攻擊指定的門檻時間值")]
     [Range(0.0f,1.0f)]
     public float NextAttackTranshold = 0.5f;
+    [Tooltip("時間單位計算所使用的每秒Frame")]
     public int Frame = 24;
+    [Tooltip("攻擊所使用的資料")]
     public Weapon_Data[] weapon_Datas;
 
     [Header("Particle")]
+    [Tooltip("攻擊過程中是否會使用粒子特效，對應ThirdPersonMovement中Weapon_Attack_Data的weapon_particles")]
     public bool playAttackParticle = false;
+    [Tooltip("觸發粒子特效時的Frame")]
     public int playParticleFrame;
     bool playedParticle = false;
     float playParticleNomalize = 0.0f;
 
 
     [Header("Special Attack")]
+    [Tooltip("特殊攻擊時是否保留武器顯示")]
     public bool specialWeaponAppear = true;
+    [Tooltip("特殊攻擊的index(對應Weapon_Skill)")]
     public ActionIndex specialAttackIndex = ActionIndex.None;
+    [Tooltip("特殊攻擊的持續時間")]
     public float specialAttackDuration = 2.0f;
     int specialAttack = 0; //0代表未動作， > 0 代表成功， < 0 代表失敗
+    [Tooltip("能產生特殊攻擊的指令輸入區間(最小值)")]
     [Range(0.0f, 1.0f)]
     public float special_min = 0.3f;
+    [Tooltip("能產生特殊攻擊的指令輸入區間(最大值)")]
     [Range(0.0f, 1.0f)]
     public float special_max = 0.5f;
+    [Tooltip("特殊攻擊所產生的攝影機晃動幅度")]
     public float specialShakeStrength = 0.0f;
+    [Tooltip("特殊攻擊所產生的音效")]
     public AudioClip special_clip;
+    [Tooltip("特殊攻擊所產生的音效大小")]
     public float special_clip_volume = 1.0f;
+    [Tooltip("特殊攻擊所產生的攝影機晃動Impulse(CameraShakeManager)")]
     public CameraImpulseIndex cameraImpulseIndex = CameraImpulseIndex.None;
 
     [Header("PostProcess Volume")]
+    [Tooltip("是否使用後處理特效")]
     public bool useVolume = false;
+    [Tooltip("使用的後處理特效index(參照GameManager的volumes)")]
     public int volumeIndex = 0;
+    [Tooltip("後處理特效FadeIn的時間")]
     public float volumeFadeInDuration = 0.3f;
+    [Tooltip("後處理特效FadeOut的時間")]
     public float volumeFadeOutDuration = 0.3f;
 
 
@@ -397,23 +430,33 @@ public class AttackStateMachine : StateMachineBehaviour
     [System.Serializable]
     public class Weapon_Data
     {
+        [Tooltip("使用的左手或右手")]
         public HandType handType;
 
         [Header("Weapon Fade")]
+        [Tooltip("使用時間單位")]
         public FadeUnit fadeUnit;
+        [Tooltip("FadeIn的時間")]
         public float FadeIn;
+        [Tooltip("FadeOut的時間")]
         public float FadeOut;
 
         [Header("Catch Weapon")]
+        [Tooltip("拿到武器的Frame")]
         public int catchFrame;
         protected internal bool catched;
         protected internal float catchPercent;
 
         [Header("Weapon Status")]
+        [Tooltip("是否將以下數據設定為武器的狀態值")]
         public bool useWeaponStatus = false;
+        [Tooltip("武器的攻擊力")]
         public int attack = 0;
+        [Tooltip("武器的外力")]
         public Vector3 force;
+        [Tooltip("武器傷害的類型")]
         public DamageType damageType;
+        [Tooltip("是否在Catch到武器之後才開啟武器的Collider")]
         public bool turnOnColWhenCatch = true;
     }
 }

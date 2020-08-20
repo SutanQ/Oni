@@ -8,8 +8,11 @@ public class Player : Damegeable
     ThirdPersonMovement thirdPerson;
 
     [Header("UI")]
-    public float hp_duration = 0.2f; 
+    [Tooltip("血量UI扣血變化的速度")]
+    public float hp_duration = 0.2f;
+    [Tooltip("血量UI(深紅血)")]
     public Image UI_HP;
+    [Tooltip("血量UI(綠血)")]
     public Image UI_HPgreen;
 
     protected override void Start()
@@ -29,7 +32,8 @@ public class Player : Damegeable
     public override void TakeDamege(int dmg, DamageType damageType, Vector3 force, bool takeDamageTrigger, bool takeInvincibleTime = true)
     {
         if (anim.GetBool(IDManager.Flashing_ID)) return;
-
+        if (dmg > GameManager.Instance.PlayerTakeDmgMotorThreshold)
+            GameManager.Instance.PlayerTakeDamageMotor(dmg);
         base.TakeDamege(dmg, damageType, force, takeDamageTrigger, takeInvincibleTime);
         //UpdateUI();
     }

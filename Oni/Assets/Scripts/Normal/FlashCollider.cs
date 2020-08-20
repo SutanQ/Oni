@@ -70,6 +70,8 @@ public class FlashCollider : MonoBehaviour
         CameraShakeManager.Instance.SetTimeScaleType(false);
         CameraShakeManager.Instance.AddCameraShake(FlashManager.Instance.cameraShakeStrength);
 
+        GameManager.Instance.SetGamePadMotor(0.1f, 0.4f, 0.4f);  //震動
+
         float timeScaleCount = Mathf.Pow(FlashManager.Instance.timeScaleBaseMagnification, FlashManager.Instance.FlashCount);
         //thirdPerson.SetHitMaterial(FlashManager.Instance.hitMaterialDuration / timeScaleCount);
 

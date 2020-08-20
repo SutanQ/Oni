@@ -6,13 +6,14 @@ using Cinemachine;
 public class CameraShakeManager : MonoBehaviour
 {
     public static CameraShakeManager Instance;
-
+    [Tooltip("主要的Cinemachine攝影機")]
     public CinemachineFreeLook cinemachineFree;
+    [Tooltip("攝影機晃動冷卻的速度")]
     public float clamDownSpeed = 4.0f;
     CinemachineBasicMultiChannelPerlin cinemachineBasic1;
     CinemachineBasicMultiChannelPerlin cinemachineBasic2;
     CinemachineBasicMultiChannelPerlin cinemachineBasic3;
-
+    [Tooltip("晃動所使用的Impulse群組")]
     public CinemachineImpulseSource[] cinemachineImpulses;
 
     float defaultRadius1;
@@ -76,6 +77,8 @@ public class CameraShakeManager : MonoBehaviour
 
         if(((int)impulseIndex) < (int)CameraImpulseIndex.None)
             cinemachineImpulses[(int)impulseIndex].GenerateImpulse(Camera.main.transform.forward);
+
+        GameManager.Instance.SetGamePadMotor(0.1f, strength * 0.4f, strength * 0.4f);
     }
 
     public void ClimbCameraYAxis(bool cameraIn)

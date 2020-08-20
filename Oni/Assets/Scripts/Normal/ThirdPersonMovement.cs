@@ -10,56 +10,87 @@ using UnityEngine.InputSystem;
 public class ThirdPersonMovement : MonoBehaviour
 {
     //ControlInput controlInput;
+    [Tooltip("角色控制器")]
     public CharacterController characterController;
+    [Tooltip("移動速度")]
     public float moveSpeed = 6.0f;
+    [Tooltip("轉身速度")]
     public float turnSpeed = 5.0f;
+    [Tooltip("轉身的Smooth時間")]
     public float turnSmoothTime = 0.1f;
+    [Tooltip("跳躍高度")]
     public float jumpHeight = 2.5f;
 
     float currentVelocity;
+    [Tooltip("是否使用重力")]
     public bool useGravity = true;
     Transform cam;
     Damegeable playerDamageable;
 
+    [Tooltip("往上跳時的重力")]
     public float upGravity = -5.0f;
+    [Tooltip("掉落時的重力")]
     public float downGravity = -9.81f;
     Vector3 velocity;
+    [Tooltip("被怪物推動所使用的Collider")]
     public Collider RigidBodyCollider;
+    [Tooltip("觸發魔女時間所使用的Collider")]
     public Collider WitchCollider;
 
     [Header("Ground")]
+    [Tooltip("判斷著地的標的物")]
     public Transform groundCheck;
+    [Tooltip("判斷著地的範圍")]
     public float groundCheckDistance = 0.4f;
+    [Tooltip("判斷著地的Layer")]
     public LayerMask groundMask;
     bool isGrounded = false;
 
     [Header("Material")]
+    [Tooltip("需要設定Forward參數的材質球，用來控制Shadow顯示的程度，面向陽光就不產生陰影")]
     public Material bodyMaterial;
 
     [Header("Hit Materials")]
+    [Tooltip("被擊中的發光特效顏色")]
     [ColorUsage(true, true)]
     public Color hitColor = new Color(16, 16, 16, 1);
+    [Tooltip("被擊中發光會影響的材質球群")]
     public Material[] hitMaterials;
 
     [Header("Camera")]
-    [Range(0f, 10f)] public float LookSpeed = 1f;
-    public bool InvertY = false;
+    [Tooltip("主攝影機")]
     public CinemachineFreeLook cinemachineFree;
-    public float wheelSpeed = 0.5f;
-    public Vector2 TopMinMax = new Vector2(2.5f, 5.5f);
-    public Vector2 MiddleMinMax = new Vector2(3.5f, 6.0f);
-    public Vector2 BottomMinMax = new Vector2(1.5f, 2.5f);
+    [Tooltip("攝影機的敏感度")]
+    [Range(0f, 10f)] public float LookSpeed = 1f;
+    [Tooltip("攝影機Y軸是否反向")]
+    public bool InvertY = false;
+    //public float wheelSpeed = 0.5f;
+    //public Vector2 TopMinMax = new Vector2(2.5f, 5.5f);
+    //public Vector2 MiddleMinMax = new Vector2(3.5f, 6.0f);
+    //public Vector2 BottomMinMax = new Vector2(1.5f, 2.5f);
 
     [Header("Lock")]
+    [Tooltip("鎖定敵人時所使用的攝影機")]
     public CinemachineVirtualCamera lockCam;
     CinemachineTransposer locakTransposer;
+    [Tooltip("鎖定敵人時攝影機的偏移值")]
     public CinemachineCameraOffset locakCamOffset;
+    [Tooltip("能鎖定到敵人的範圍")]
     public float lockRange = 15.0f;
+    [Tooltip("能鎖定到敵人的面向角度")]
     public float lockAngle = 180;
     Transform lockTarget;
     bool isLock = false;
     
     Animator anim;
+
+    [Header("Lock UI")]
+    [Tooltip("鎖定敵人的UI 1")]
+    public Image targetAim;
+    [Tooltip("鎖定敵人的UI 2")]
+    public Image targetLockAim;
+    [Tooltip("鎖定敵人UI的偏移值")]
+    public Vector2 TargetUI_Offset = new Vector2(0, 1);
 
     [Header("Magic")]
     public float startDuration = 0.3f;
@@ -73,13 +104,8 @@ public class ThirdPersonMovement : MonoBehaviour
     Coroutine magicCoroutine;
 
     [Header("Weapon")]
-    int attackIndex = 0;
     public Weapon_Attack_Group[] weapon_Attack_Groups;
-
-    [Header("Target UI")]
-    public Image targetAim;
-    public Image targetLockAim;
-    public Vector2 TargetUI_Offset = new Vector2(0, 1);
+    int attackIndex = 0;
 
     //Coroutine coroutine_animationMove;
     Vector3 move;
@@ -1199,19 +1225,28 @@ public class ThirdPersonMovement : MonoBehaviour
 [System.Serializable]
 public class Weapon_Attack_Group
 {
+    [Tooltip("武器攻擊的名稱")]
     public string name = "Attack";
+    [Tooltip("武器攻擊的資料集")]
     public Weapon_Attack_Data[] weapon_Attack_Datas;
 }
 
 [System.Serializable]
 public class Weapon_Attack_Data
 {
+    [Tooltip("拿取武器的Holder")]
     public Transform weapon_holder;
+    [Tooltip("使用的武器")]
     public Transform weapon;
+    [Tooltip("武器fadeIn fadeOut所使用的材質球")]
     public Material ghost_material;
+    [Tooltip("武器fadeIn時所觸發的粒子特效")]
     public ParticleSystem[] weapon_start_particles;
+    [Tooltip("武器fadeOut時所觸發的粒子特效")]
     public ParticleSystem[] weapon_end_particles;
+    [Tooltip("武器使用過程中所觸發的粒子特效(由AttackStateMachine所控制)")]
     public ParticleSystem[] weapon_particles;
+    [Tooltip("動作中會Catch到武器的位置，用來在AttackStateMachine中預先設定好武器顯示的位置。\n依照在AttackStateMachine中Weapon_Data->catchFrame的Frame數，手動在Animation抓取該Frame weapon_holder位置，並將此位置設定為本參數值。")]
     public Transform attack_catchPos;
 
     protected internal Material[] weapon_materials;
