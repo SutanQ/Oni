@@ -97,6 +97,8 @@ public class GameManager : MonoBehaviour
     /// <param name="high">高頻率震幅</param>
     public void SetGamePadMotor(float duration, float low, float high)
     {
+        if (Gamepad.current == null) return;
+
         if (motorCoroutine != null)
             StopCoroutine(motorCoroutine);
         motorCoroutine = StartCoroutine(DoGamePadMotor(duration, low, high));
