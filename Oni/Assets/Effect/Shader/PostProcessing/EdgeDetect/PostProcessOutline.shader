@@ -80,6 +80,11 @@
 				return 0.2125 * color.r + 0.7154 * color.g + 0.0721 * color.b;
 			}
 
+			void Unity_Remap_float(float In, float2 InMinMax, float2 OutMinMax, out float Out)
+			{
+				Out = OutMinMax.x + (In - InMinMax.x) * (OutMinMax.y - OutMinMax.x) / (InMinMax.y - InMinMax.x);
+			}
+
 			float Sobel(v2f i)
 			{
 				float edgex = 0;
@@ -186,7 +191,7 @@
 					g = pow(g, _SobelPower);
 
 					//顯示Sobel線條           線條顏色
-					float4 sobel_edge = lerp(float4(0.05, 0.05, 0.05, 1), color, step(_SobelTranshold, g));
+					float4 sobel_edge = lerp(_Color, color, step(_SobelTranshold, g));
 
 					//return alphaBlend(edgeColor, color);
 					return alphaBlend(edgeColor, lerp(color, sobel_edge, depth <= sobel_depth));
@@ -197,11 +202,20 @@
 
 					//Sobel線條偵測
 					float sobel_depth = SAMPLE_DEPTH_TEXTURE(_GlobalSobelDepthTex, i.uv).r;
-					float g = Sobel(i);
-					g = pow(g, _SobelPower);
+					float g = Sobel(i); 
+					//float linearDepth = (_ZBufferParams.x * sobel_depth * 0.001);
+					float Out;
+					//Unity_Remap_float(sobel_depth * 10, float2(0.05, 0.5), float2(0.5, 10), Out);
+					//Unity_Remap_float(linearDepth, float2(0.05, 2), float2(0.5, 6), Out);
+					Unity_Remap_float((1 - (1.0 / (_ZBufferParams.x * sobel_depth + _ZBufferParams.y))), float2(0.97, 1.0), float2(0.5, 2), Out);
+					g = pow(g, _SobelPower * Out) ;
+
+					
+					//return Out;
+					//return clamp(sobel_depth * 10, 0.02, 1);
 
 					//顯示Sobel線條           線條顏色
-					float4 sobel_edge = lerp(float4(0.05, 0.05, 0.05, 1), color, step(_SobelTranshold, g));
+					float4 sobel_edge = lerp(_Color, color, step(_SobelTranshold, g));
 
 
 					return lerp(color, sobel_edge, depth <= sobel_depth);

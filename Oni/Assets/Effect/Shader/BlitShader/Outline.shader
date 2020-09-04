@@ -159,7 +159,7 @@ Shader "Hidden/Roystan/Outline Post Process"
 				//return float4(depth.xxx, 1) * 0.2f;
 				float halfScaleFloor = floor(_Scale * 0.5 * depth * _DepthScale);
 				float halfScaleCeil = ceil(_Scale * 0.5 * depth * _DepthScale);
-
+				 
 				// Sample the pixels in an X shape, roughly centered around i.texcoord.
 				// As the _CameraDepthTexture and _CameraNormalsTexture default samplers
 				// use point filtering, we use the above variables to ensure we offset
@@ -217,12 +217,12 @@ Shader "Hidden/Roystan/Outline Post Process"
 				float4 color = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.texcoord);
 				//float4 sobel = SAMPLE_TEXTURE2D(_GlobalSobelTex, sampler_GlobalSobelTex, i.texcoord);
 
-				//SobelüŠ’ã‘ª
+				//Sobelü?’ã‘ª
 				float sobel_depth = SAMPLE_DEPTH_TEXTURE(_GlobalSobelDepthTex, sampler_GlobalSobelDepthTex, i.texcoord).r;
 				float g = Sobel(i);
 				g = pow(g, _SobelPower);
 
-				//èû¦SobelüŠ           üŠèøF
+				//èû¦Sobelü?           ü?èøF
 				float4 sobel_edge = lerp(float4(0,0,0,1), color, step(_SobelTranshold, g));
 
 				//return alphaBlend(edgeColor, color);

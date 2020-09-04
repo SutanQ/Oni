@@ -63,7 +63,7 @@
 			{
                 float sceneEyeDepth = DECODE_EYEDEPTH(tex2D(_CameraDepthTexture, i.projPos.xy / i.projPos.w));
                 float zCull = sceneEyeDepth > i.projPos.z;
-				
+				   
 				float3 data = UnpackNormal(tex2D(_MainTex, i.uv + _Time.y * _Movement.xy)).xyz;
                 float scale = data.b * i.alpha * _Magnitude;
 				return data.rg * scale * zCull;
