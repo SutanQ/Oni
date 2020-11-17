@@ -163,7 +163,7 @@ public class ThirdPersonMovement : MonoBehaviour
         }
         attackIndex = 0;
     }
-
+     
     IEnumerator MagicAnimationWeight(float targetWeight, float duration)
     {
         float t = 0;

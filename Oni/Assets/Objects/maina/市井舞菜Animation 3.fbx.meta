@@ -79,17 +79,47 @@ ModelImporter:
       74: 7118238248284978273
     second: rig|Dodge_Forward
   - first:
+      74: 5461606418912982981
+    second: rig|FlashEnd
+  - first:
+      74: 298508658430144250
+    second: rig|FlashNext
+  - first:
+      74: 1493189013121685296
+    second: rig|FlashStart
+  - first:
       74: -7361427651036151181
     second: rig|Idle
   - first:
       74: -512320013847864616
     second: rig|Jump
   - first:
+      74: -1398683864173509782
+    second: rig|Jump2
+  - first:
       74: 2788624394545332526
     second: rig|JumpAir
   - first:
+      74: -2728771282033240334
+    second: rig|JumpAir2
+  - first:
+      74: -9112275410759856419
+    second: rig|JumpAirDown
+  - first:
+      74: -6334236714726706476
+    second: rig|JumpAttackHitDown
+  - first:
+      74: 3104506630307679348
+    second: rig|JumpAttackL
+  - first:
+      74: -8350498659326256373
+    second: rig|JumpAttackR
+  - first:
       74: -4963163121458729945
     second: rig|LeftHandGrip
+  - first:
+      74: -6514999760916908734
+    second: rig|LockAttack1
   - first:
       74: 1577017239607051573
     second: rig|LockIdle
@@ -117,6 +147,9 @@ ModelImporter:
   - first:
       74: 1023992570608409904
     second: rig|Walk
+  - first:
+      74: 3960938027099609229
+    second: rig|WitchAttack1
   externalObjects: {}
   materials:
     materialImportMode: 0
