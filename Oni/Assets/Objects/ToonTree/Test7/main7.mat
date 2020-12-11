@@ -41,6 +41,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - Texture2D_3F51B3DC:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - Texture2D_46142A89:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -113,6 +117,18 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_271CBD59_Texture_1:
+        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_79BF4BC8_Texture_1:
+        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_DC32F27E_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 4bf05c88ee6b20145b1f4157908bb984, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -120,6 +136,7 @@ Material:
     m_Floats:
     - BOOLEAN_6BA73990: 0
     - BOOLEAN_85462CC0: 0
+    - BOOLEAN_975E32B2: 0
     - BOOLEAN_A9457EB: 0
     - BOOLEAN_BE46B0A5: 1
     - BOOLEAN_C19FCA5F: 0
@@ -147,6 +164,7 @@ Material:
     - Vector1_73136306: 0.3
     - Vector1_74D25D5F: 0.03
     - Vector1_765656EA: 1
+    - Vector1_83912B76: 0.8
     - Vector1_862B5294: 10
     - Vector1_86D83557: 0.7
     - Vector1_9007A39E: 0.1
@@ -171,6 +189,7 @@ Material:
     - Vector1_DCCBC99A: 0.318
     - Vector1_DEC94F4D: 3
     - Vector1_E4023638: 1
+    - Vector1_E678D4FE: 80
     - Vector1_E8F3616A: 2.6
     - Vector1_F04F7ED0: 0.5
     - Vector1_F3F665A2: 1
@@ -215,6 +234,7 @@ Material:
     - Vector2_192DAD1F: {r: 1, g: 1, b: 0, a: 0}
     - Vector4_735B1826: {r: 1, g: 1, b: 0, a: 0}
     - Vector4_746667B8: {r: 1, g: 1, b: 0, a: 0}
+    - Vector4_7C105925: {r: 0.15, g: 0.47, b: 0.28, a: 0.47}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 0.6839622, b: 0.6839622, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
