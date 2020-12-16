@@ -61,8 +61,24 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_0e480f342f5b238e821e9d2ca6515247_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 7d9f0ad78e52faf4483549a0ec2004dd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_301daf019ea1c98cbe0ef3bc3c6a07b5_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 504a7664a6578bb4d80539d1d38cc9e8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_39711649_Texture_1:
         m_Texture: {fileID: 2800000, guid: a059aa37e7351a845803f0205b1aa285, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_42b30d454de3c382ad38037300ff2fa5_Texture_1:
+        m_Texture: {fileID: 2800000, guid: eb3fc4aabe2b143449d76f7db3d2e72a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_6680b98f25e07683860c36dd80588841_Texture_1:
+        m_Texture: {fileID: 2800000, guid: ccf1815452976344a86e1ff94b157862, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_97AB8C8A_Texture_1:
@@ -89,7 +105,23 @@ Material:
         m_Texture: {fileID: 2800000, guid: eb3fc4aabe2b143449d76f7db3d2e72a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_be814c623f724c8c823402655e3208f7_Texture_1:
+        m_Texture: {fileID: 2800000, guid: eb3fc4aabe2b143449d76f7db3d2e72a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -155,3 +187,4 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _SunDirection: {r: -0.63, g: 0.08, b: -0.54, a: 0}
+  m_BuildTextureStacks: []
