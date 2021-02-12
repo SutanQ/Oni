@@ -24,7 +24,7 @@ Material:
   m_Shader: {fileID: -6465566751694194690, guid: 9044c05de9f3a4e41a00d8d987beb3c3,
     type: 3}
   m_ShaderKeywords: BOOLEAN_3AC21AED_ON BOOLEAN_432C6685D28C47DDA9E2E357B74EE534_ON
-    BOOLEAN_BE46B0A5_ON
+    BOOLEAN_BE46B0A5_ON BOOLEAN_E77ACB32_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -142,8 +142,9 @@ Material:
     - BOOLEAN_A9457EB: 0
     - BOOLEAN_BE46B0A5: 1
     - BOOLEAN_C19FCA5F: 0
-    - BOOLEAN_E77ACB32: 0
+    - BOOLEAN_E77ACB32: 1
     - BOOLEAN_ED32EB6C: 0
+    - Vector1_19b8935b7aad4d61a1a4834db87278ac: -1
     - Vector1_1F718E2B: 0.437
     - Vector1_23DF1EC2: 32
     - Vector1_27a60f6ad48d4206a7047df56e0ade69: 0.2
@@ -191,6 +192,7 @@ Material:
     - Vector1_F3F665A2: 1
     - Vector1_FE6E30C4: 1.18
     - Vector1_FF3E1EBE: 0.8
+    - Vector1_cf50a01462e143c8b93f67e51c74bc98: 1
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
