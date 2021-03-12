@@ -148,10 +148,12 @@ public class Damegeable : MonoBehaviour
         {
             SetForce(force);
         }
-        
+
 
         if (damageClip != null)
+        {
             AudioManager.instance.PlaySound(damageClip, transform.position);
+        }
 
         if (OnDamege != null)
             OnDamege();

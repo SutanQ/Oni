@@ -100,7 +100,9 @@ public class AudioManager : MonoBehaviour
     public void PlaySound(AudioClip clip, Vector3 pos, float strength = 1.0f)
     {
         if (clip != null)
+        {
             AudioSource.PlayClipAtPoint(clip, pos, sfxVolumePercent * masterVolumePercent * strength);
+        }
     }
 
     
