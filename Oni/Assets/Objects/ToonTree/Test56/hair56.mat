@@ -23,8 +23,7 @@ Material:
   m_Name: hair56
   m_Shader: {fileID: -6465566751694194690, guid: 9044c05de9f3a4e41a00d8d987beb3c3,
     type: 3}
-  m_ShaderKeywords: BOOLEAN_3AC21AED_ON BOOLEAN_432C6685D28C47DDA9E2E357B74EE534_ON
-    BOOLEAN_BE46B0A5_ON
+  m_ShaderKeywords: BOOLEAN_432C6685D28C47DDA9E2E357B74EE534_ON BOOLEAN_BE46B0A5_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -135,7 +134,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - BOOLEAN_3AC21AED: 1
+    - BOOLEAN_3AC21AED: 0
     - BOOLEAN_432C6685D28C47DDA9E2E357B74EE534: 1
     - BOOLEAN_6BA73990: 0
     - BOOLEAN_85462CC0: 0
@@ -224,7 +223,7 @@ Material:
     - Color_22E92A60: {r: 0.9, g: 0.9, b: 0.9, a: 1}
     - Color_497915ff14b64b5f8a78e396bb47518e: {r: 0.2979263, g: 0.9716981, b: 0.74790174,
         a: 1}
-    - Color_BCCA2C6E: {r: 0.72156864, g: 1.7176471, b: 1.6941177, a: 1}
+    - Color_BCCA2C6E: {r: 0.6117647, g: 0.85882354, b: 0.36862746, a: 1}
     - Color_C04639DD: {r: 1, g: 1, b: 1, a: 1}
     - Color_D0404BA9: {r: 3.701961, g: 0.1254902, b: 0.1254902, a: 0}
     - Color_E8E78366: {r: 1, g: 1, b: 1, a: 1}
