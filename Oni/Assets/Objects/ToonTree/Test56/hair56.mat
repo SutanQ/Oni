@@ -156,7 +156,7 @@ Material:
     - Vector1_3D9FC49E: 2
     - Vector1_431B35CD: 0.01
     - Vector1_4749EC0: 0.8
-    - Vector1_4CEB96D9: 1
+    - Vector1_4CEB96D9: 1.3
     - Vector1_516E173B: 2
     - Vector1_58380FE2: 2.93
     - Vector1_63ba0f6d231a480287a3779f703d7666: 0.11
@@ -168,11 +168,11 @@ Material:
     - Vector1_74D25D5F: 0.03
     - Vector1_824439BF: 30
     - Vector1_862B5294: 1
-    - Vector1_86D83557: 0.5
+    - Vector1_86D83557: 0.3
     - Vector1_9007A39E: 0.1
     - Vector1_97DD155E: 0
     - Vector1_AB1FF879: 20
-    - Vector1_B08BC250: 1.5
+    - Vector1_B08BC250: 2.2
     - Vector1_B2C446F9: 100
     - Vector1_B500DB0D: 0.1
     - Vector1_B9C99FFF: 0.5
@@ -222,6 +222,8 @@ Material:
     - Color_1BED5FDE: {r: 0.4, g: 0.4, b: 0.4, a: 1}
     - Color_22E92A60: {r: 0.9, g: 0.9, b: 0.9, a: 1}
     - Color_497915ff14b64b5f8a78e396bb47518e: {r: 0.2979263, g: 0.9716981, b: 0.74790174,
+        a: 1}
+    - Color_5a4beb2762044899b971b9a5463feb1a: {r: 0.69411767, g: 0.2509804, b: 0.23137255,
         a: 1}
     - Color_BCCA2C6E: {r: 0.6117647, g: 0.85882354, b: 0.36862746, a: 1}
     - Color_C04639DD: {r: 1, g: 1, b: 1, a: 1}
